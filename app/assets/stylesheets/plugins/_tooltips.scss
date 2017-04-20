@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+@if $enable-tooltips == true {
+    .tooltip {
+        position: relative;
+        cursor: pointer;
+        outline: none;
+
+        // Action
+        &[data-action="hover"] {
+            &:hover {
+                .tooltip__popup {
+                    display: block;
+
+                    &:hover {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &[data-action="focus"] {
+            &:focus {
+                .tooltip__popup {
+                    display: block;
+                }
+            }
+        }
+
+        &[data-action="active"] {
+            &:active {
+                .tooltip__popup {
+                    display: block;
+                }
+            }
+        }
+
+        // Position
+        &[data-position="top"],
+        &[data-position="bottom"] {
+            .tooltip__popup {
+                left: 50%;
+                transform: translateX(-50%);
+
+                &::before {
+                    right: 0;
+                    left: 0;
+                }
+
+                &::after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        &[data-position="top"] {
+            .tooltip__popup {
+                bottom: 100%;
+                padding:
+                         $tooltip-popup-padding-y
+                         $tooltip-popup-padding-x
+                        ($tooltip-popup-padding-y + $tooltip-popup-triangle-size);
+
+                &::before {
+                    top: 0;
+                    bottom: $tooltip-popup-triangle-size;
+                }
+
+                &::after {
+                    @include triangle($tooltip-popup-triangle-size, $tooltip-popup-color, down);
+                    bottom: $tooltip-popup-triangle-size / 2;
+                }
+            }
+        }
+
+        &[data-position="bottom"] {
+            .tooltip__popup {
+                top: 100%;
+                padding:
+                        ($tooltip-popup-padding-y + $tooltip-popup-triangle-size)
+                         $tooltip-popup-padding-x
+                         $tooltip-popup-padding-y;
+
+                &::before {
+                    top: $tooltip-popup-triangle-size;
+                    bottom: 0;
+                }
+
+                &::after {
+                    @include triangle($tooltip-popup-triangle-size, $tooltip-popup-color, up);
+                    top: $tooltip-popup-triangle-size / 2;
+                }
+            }
+        }
+
+        &[data-position="right"],
+        &[data-position="left"] {
+            .tooltip__popup {
+                top: 50%;
+                transform: translateY(-50%);
+
+                &::before {
+                    top: 0;
+                    bottom: 0;
+                }
+
+                &::after {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        &[data-position="right"] {
+            .tooltip__popup {
+                left: 100%;
+                padding:
+                         $tooltip-popup-padding-y
+                         $tooltip-popup-padding-x
+                         $tooltip-popup-padding-y
+                        ($tooltip-popup-padding-x + $tooltip-popup-triangle-size);
+
+                &::before {
+                    right: 0;
+                    left: $tooltip-popup-triangle-size;
+                }
+
+                &::after {
+                    @include triangle($tooltip-popup-triangle-size, $tooltip-popup-color, left);
+                    left: $tooltip-popup-triangle-size / 2;
+                }
+            }
+        }
+
+        &[data-position="left"] {
+            .tooltip__popup {
+                right: 100%;
+                padding:
+                         $tooltip-popup-padding-y
+                        ($tooltip-popup-padding-x + $tooltip-popup-triangle-size)
+                         $tooltip-popup-padding-y
+                         $tooltip-popup-padding-x;
+
+                &::before {
+                    right: $tooltip-popup-triangle-size;
+                    left: 0;
+                }
+
+                &::after {
+                    @include triangle($tooltip-popup-triangle-size, $tooltip-popup-color, right);
+                    right: $tooltip-popup-triangle-size / 2;
+                }
+            }
+        }
+
+        // Popup
+        &__popup {
+            position: absolute;
+            z-index: $tooltip-popup-zindex;
+            display: none;
+            cursor: default;
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: "";
+            }
+
+            &::before {
+                z-index: -1;
+                background: $tooltip-popup-color;
+                box-shadow: $tooltip-popup-shadow;
+            }
+
+            &::after {
+                z-index: 1;
+            }
+        }
+    }
+}

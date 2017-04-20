@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@if $enable-icons == true {
+    .icon {
+        fill: $color-base;
+        fill-rule: evenodd;
+
+        &--16 {
+            @include size(1.6rem);
+        }
+    }
+}
