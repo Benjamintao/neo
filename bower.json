@@ -1,0 +1,23 @@
+{
+  "name": "neo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    ""
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^7.0.0",
+    "jquery": "^3.2.1",
+    "svg4everybody": "https://github.com/jonathantneal/svg4everybody.git#^2.1.8"
+  }
+}

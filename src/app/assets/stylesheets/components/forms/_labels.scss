@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@if $enable-labels == true {
+    .label {
+        @if $enable-checkboxes == true {
+            &--has-checkbox {
+                position: relative;
+                padding-left: $radiobutton-size * 1.5;
+
+                .checkbox {
+                    position: absolute;
+                    top: -.2rem;
+                    left: 0;
+                }
+            }
+        }
+
+        @if $enable-radiobuttons == true {
+            &--has-radiobutton {
+                position: relative;
+                padding-left: $radiobutton-size * 1.5;
+
+                .radiobutton {
+                    position: absolute;
+                    top: -.2rem;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

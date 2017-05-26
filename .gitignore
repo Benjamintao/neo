@@ -1,2 +1,11 @@
 .idea
+
 node_modules
+
+src/vendor
+dist
+
+__MACOSX
+.DS_Store
+
+Thumbs.db

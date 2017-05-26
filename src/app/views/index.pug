@@ -1,0 +1,58 @@
+extends layouts/application
+
+block title
+    title Neo
+
+block main
+    article
+        .container
+            h5 Forms
+            br
+            section
+                h6 Checkboxes
+                br
+                p
+                    span.checkbox
+                        input(type='checkbox')
+                        span
+                    span.checkbox
+                        input(type='checkbox' checked)
+                        span
+                    span.checkbox
+                        input(type='checkbox' disabled)
+                        span
+                    span.checkbox
+                        input(type='checkbox' checked disabled)
+                        span
+                br
+                p
+                    label.label.label--has-checkbox
+                        span.checkbox
+                            input(type='checkbox')
+                            span
+                        | Checkbox
+
+            br
+            section
+                h6 Radiobuttons
+                br
+                p
+                    span.radiobutton
+                        input(type='radio' name='radio1')
+                        span
+                    span.radiobutton
+                        input(type='radio' name='radio1' checked)
+                        span
+                    span.radiobutton
+                        input(type='radio' name='radio2' disabled)
+                        span
+                    span.radiobutton
+                        input(type='radio' name='radio2' checked disabled)
+                        span
+                br
+                p
+                    label.label.label--has-radiobutton
+                        span.radiobutton
+                            input(type='radio' name='radio3')
+                            span
+                        | Radiobutton

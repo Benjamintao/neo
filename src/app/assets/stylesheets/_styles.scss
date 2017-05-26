@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    @include text-base;
+    min-height: 100%;
+    background: $color-base-inverse;
+    color: $color-base;
+
+    @if $enable-sticky-footer == true {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+a {
+    &.is-current {
+        cursor: default;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+}
+
+button,
+input,
+select,
+textarea {
+    background: none;
+    border: none;
+}
+
+h1 {
+    @include h1;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    @include h3;
+}
+
+h4 {
+    @include h4;
+}
+
+h5 {
+    @include h5;
+}
+
+h6 {
+    @include h6;
+}
+
+dl {
+
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+hr {
+
+}
+
+img {
+    max-width: 100%;
+
+    &[width],
+    &[height] {
+        max-width: none;
+    }
+}
+
+small {
+    @include text-small;
+}
+
+textarea {
+    resize: none;
+}

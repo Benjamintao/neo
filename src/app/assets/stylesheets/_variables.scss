@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// Media queries (for example: xs, sm, md, lg, xl)
+$mq-breakpoints: (
+    'sm': 767px,
+    'lg': 768px
+);
+
+// Border radius
+$border-radius-base: .5rem;
+
+// Colors
+$color-base:          #000;
+$color-base-inverse:  #fff;
+$color-base-light:    rgba($color-base, .8);
+$color-base-lighter:  rgba($color-base, .6);
+$color-base-lightest: rgba($color-base, .4);
+
+$color-brand: #brand;
+
+$color-error:   red;
+$color-warning: orange;
+$color-success: green;
+
+// Forms
+$checkbox-size:    2rem;
+$radiobutton-size: 2rem;
+
+// Transitions
+$transition-duration-base: .2s;

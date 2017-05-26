@@ -1,0 +1,25 @@
+doctype html
+
+html
+    head
+        block title
+        link(rel='stylesheet' media='all' href='css/application.css')
+        script(src='vendor/modernizr-custom.js')
+
+    body
+        include components/_site_header
+
+        main
+            block main
+
+        include components/_site_footer
+
+        block scripts
+            script(src='vendor/jquery.js')
+            script(src='vendor/svg4everybody.js')
+
+            script(src='js/config.js')
+            script(src='js/functions.js')
+            script(src='js/variables.js')
+
+            script(src='js/components/icons.js')
