@@ -3,21 +3,21 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    ""
+    "Vyacheslav Efremenko <brainsapiens@yandex.ru>"
   ],
   "license": "MIT",
-  "homepage": "",
-  "private": true,
+  "homepage": "https://github.com/brainsapiens/neo",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "src/vendor/",
     "test",
     "tests"
   ],
-  "dependencies": {
-    "normalize-css": "normalize.css#^7.0.0",
+  "devDependencies": {
     "jquery": "^3.2.1",
-    "svg4everybody": "https://github.com/jonathantneal/svg4everybody.git#^2.1.8"
+    "svg4everybody": "^2.1.8",
+    "normalize-css": "^7.0.0"
   }
 }

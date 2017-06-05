@@ -2,7 +2,10 @@ import del from 'del';
 import gulp from 'gulp';
 import pug from 'gulp-pug';
 import sass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 import babel from 'gulp-babel';
+import eslint from 'gulp-eslint';
 import concat from 'gulp-concat';
 import imagemin from 'gulp-imagemin';
 import connect from 'gulp-connect';
@@ -21,16 +24,17 @@ export function views() {
         .pipe(connect.reload());
 }
 
-//TODO: Add Autoprefixer (last 2 versions, IE11)
 export function styles() {
     return gulp.src('src/app/assets/stylesheets/application.scss')
         .pipe(changed('dist/css'))
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({
+            outputStyle: 'expanded' // :nested, :expanded, :compact, :compressed
+        }))
+        .pipe(postcss([ autoprefixer() ]))
         .pipe(gulp.dest('dist/css'))
         .pipe(connect.reload());
 }
 
-//TODO: Add linter
 export function scripts() {
     return gulp.src([
             'src/app/assets/javascripts/config.js',
@@ -40,6 +44,8 @@ export function scripts() {
             '!src/app/assets/javascripts/vendor/**/*.js'
         ])
         .pipe(changed('dist/js'))
+        .pipe(eslint())
+        .pipe(eslint.format())
         .pipe(babel({
             presets: ['es2015']
         }))
@@ -65,9 +71,9 @@ export function images() {
 
 export function vendors() {
     return gulp.src([
-        'src/vendor/normalize-css/normalize.css',
-        'src/vendor/jquery/dist/jquery.js',
-        'src/vendor/svg4everybody/dist/svg4everybody.js',
+        'src/vendor/assets/normalize-css/normalize.css',
+        'src/vendor/assets/jquery/dist/jquery.min.js',
+        'src/vendor/assets/svg4everybody/dist/svg4everybody.min.js',
         'src/app/assets/javascripts/vendor/modernizr-custom.js'
     ])
         .pipe(gulp.dest('dist/vendor'));

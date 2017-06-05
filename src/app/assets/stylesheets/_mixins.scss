@@ -2,25 +2,131 @@
 
 // Media queries
 @mixin mq($mq-breakpoint) {
-    @if map-has-key($mq-breakpoints, $mq-breakpoint) {
-        $mq-device: '';
-        @if $enable-mq-device == true {
-            $mq-device: '-device';
-        }
+    @if $enable-mq == true {
+        @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+            $mq-device: '';
+            @if $enable-mq-device == true {
+                $mq-device: '-device';
+            }
 
-        $mq-range: 'min';
-        @if $mq-breakpoint == nth(map-keys($mq-breakpoints), 1) {
-            $mq-range: 'max';
-        }
+            $mq-range: 'min';
+            @if $mq-breakpoint == nth(map-keys($mq-breakpoints), 1) {
+                $mq-range: 'max';
+            }
 
-        @media all and (#{$mq-range}#{$mq-device}-width: map-get($mq-breakpoints, $mq-breakpoint)) {
-            @content;
+            @media all and (#{$mq-range}#{$mq-device}-width: map-get($mq-breakpoints, $mq-breakpoint)) {
+                @content;
+            }
         }
     }
 }
 
+// Container
+@mixin container {
+    margin: {
+        right: auto;
+        left: auto;
+    };
+
+    @if $enable-mq == true {
+        @each $mq-container-width in $mq-container-widths {
+            $mq: nth($mq-container-width, 1);
+            $container-width: nth($mq-container-width, 2);
+
+            @include mq($mq) {
+                max-width: $container-width;
+            }
+        }
+
+        @each $mq-container-indent in $mq-container-indents {
+            $mq: nth($mq-container-indent, 1);
+            $container-indent: nth($mq-container-indent, 2);
+
+            @include mq($mq) {
+                padding: {
+                    right: $container-indent;
+                    left:  $container-indent;
+                };
+            }
+        }
+    } @else {
+        max-width: $container-width;
+
+        padding: {
+            right: $container-indent;
+            left: $container-indent;
+        };
+    }
+}
+
+// Grid
+@mixin grid($main-axis: x, $justify-content: flex-start, $align-items: flex-start) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+
+    @if $main-axis == x {
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    @if $main-axis == y {
+        flex-direction: column;
+    }
+
+    @if $enable-mq == true {
+        @each $mq-grid-gutter in $mq-grid-gutters {
+            $mq: nth($mq-grid-gutter, 1);
+            $gutter: -#{nth($mq-grid-gutter, 2) / 2};
+
+            @include mq($mq) {
+                margin: {
+                    right: $gutter;
+                    left:  $gutter;
+                };
+            }
+        }
+    } @else {
+        $gutter: -$grid-gutter / 2;
+
+        margin: {
+            right: $gutter;
+            left:  $gutter;
+        };
+    }
+}
+
+@mixin grid-col {
+    flex: 1 1 auto;
+
+    @if $enable-mq == true {
+        @each $mq-grid-gutter in $mq-grid-gutters {
+            $mq: nth($mq-grid-gutter, 1);
+            $gutter: nth($mq-grid-gutter, 2) / 2;
+
+            @include mq($mq) {
+                padding: {
+                    right: $gutter;
+                    left:  $gutter;
+                };
+            }
+        }
+    } @else {
+        $gutter: $grid-gutter / 2;
+
+        padding: {
+            right: $gutter;
+            left:  $gutter;
+        };
+    }
+}
+
+@mixin grid-col-size($size) {
+    flex: 0 0 $size * 100%;
+}
+
 // Ellipsis
-@mixin ellipsis($max-width: 100%, $display: inline-block) {
+@mixin ellipsis($max-width: 100%, $display: inline-flex) {
     display: $display;
     max-width: $max-width;
     overflow: hidden;

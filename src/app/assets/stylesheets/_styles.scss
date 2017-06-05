@@ -5,7 +5,6 @@
 *::after {
     margin: 0;
     padding: 0;
-    border: none;
     box-sizing: border-box;
 }
 
@@ -42,6 +41,7 @@ select,
 textarea {
     background: none;
     border: none;
+    font: inherit;
 }
 
 h1 {
@@ -68,19 +68,6 @@ h6 {
     @include h6;
 }
 
-dl {
-
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-hr {
-
-}
-
 img {
     max-width: 100%;
 
@@ -90,8 +77,18 @@ img {
     }
 }
 
+ol,
+ul {
+    list-style: none;
+}
+
 small {
     @include text-small;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 textarea {

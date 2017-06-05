@@ -1,9 +1,9 @@
-.idea
+/.idea
 
-node_modules
+/node_modules
 
-src/vendor
-dist
+/src/vendor
+/dist
 
 __MACOSX
 .DS_Store
