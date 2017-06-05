@@ -125,16 +125,6 @@
     flex: 0 0 $size * 100%;
 }
 
-// Ellipsis
-@mixin ellipsis($max-width: 100%, $display: inline-flex) {
-    display: $display;
-    max-width: $max-width;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-wrap: normal;
-}
-
 // Font
 @mixin font($font-size, $line-height) {
     font-size: $font-size;
