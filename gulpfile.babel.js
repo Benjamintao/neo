@@ -5,7 +5,6 @@ import sass from 'gulp-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import babel from 'gulp-babel';
-import eslint from 'gulp-eslint';
 import concat from 'gulp-concat';
 import imagemin from 'gulp-imagemin';
 import connect from 'gulp-connect';
@@ -44,8 +43,6 @@ export function scripts() {
             '!src/app/assets/javascripts/vendor/**/*.js'
         ])
         .pipe(changed('dist/js'))
-        .pipe(eslint())
-        .pipe(eslint.format())
         .pipe(babel({
             presets: ['es2015']
         }))
