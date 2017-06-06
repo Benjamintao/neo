@@ -6,7 +6,7 @@ function createMq(mqBreakpoints) {
         const mqDevice = enable.mqDevice ? 'device-' : '';
 
         for (let i = 0; i < mqBreakpoints.length; i++) {
-            let mqRange = i === 0 ? 'max' : 'min';
+            const mqRange = i === 0 ? 'max' : 'min';
 
             mq[mqBreakpoints[i][0]] = {
                 int: mqBreakpoints[i][1],
