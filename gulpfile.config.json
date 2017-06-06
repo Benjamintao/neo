@@ -1,0 +1,40 @@
+{
+  "paths": {
+    "src": {
+      "views": "src/app/views/*.pug",
+      "styles": "src/app/assets/stylesheets/**/*.scss",
+      "scripts": "src/app/assets/javascripts/**/*.js",
+      "fonts": "src/app/assets/fonts/**/*.{wof,woff2}",
+      "images": "src/app/assets/images/**/*.{gif,jpg,jpeg,png,svg}",
+      "files": "src/public/**/*"
+    },
+    "dist": {
+      "root": "dist/",
+      "css": "dist/css/",
+      "js": "dist/js/",
+      "fonts": "dist/fonts/",
+      "img": "dist/img/",
+      "vendor": "dist/vendor/"
+    }
+  },
+  "options": {
+    "pug": {
+      "pretty": true
+    },
+    "sass": {
+      "outputStyle": "expanded"
+    },
+    "babel": {
+      "presets": ["env"]
+    },
+    "modernizr": {
+      "options": [
+        "mq",
+        "setClasses"
+      ],
+      "tests": [
+        "touchevents"
+      ]
+    }
+  }
+}
