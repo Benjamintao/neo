@@ -1,3 +1,3 @@
 if (enable.icons === true) {
-    svg4everybody();
+    svg4everybody({});
 }
