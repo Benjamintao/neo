@@ -1,9 +1,19 @@
 {
   "paths": {
     "src": {
-      "views": "src/app/views/*.pug",
-      "styles": "src/app/assets/stylesheets/**/*.scss",
-      "scripts": "src/app/assets/javascripts/**/*.js",
+      "views": {
+        "build": "src/app/views/*.pug",
+        "watch": "src/app/views/**/*.pug"
+      },
+      "styles": {
+        "build": "src/app/assets/stylesheets/application.scss",
+        "watch": "src/app/assets/stylesheets/**/*.scss"
+      },
+      "scripts": {
+        "build": "src/app/assets/javascripts/application.babel.js",
+        "watch": "src/app/assets/javascripts/**/*.js"
+      },
+      "modernizr": "src/app/assets/javascripts/modernizr.js",
       "fonts": "src/app/assets/fonts/**/*.{wof,woff2}",
       "images": "src/app/assets/images/**/*.{gif,jpg,jpeg,png,svg}",
       "files": "src/public/**/*"
@@ -28,11 +38,12 @@
       "presets": ["env"]
     },
     "modernizr": {
+      "classPrefix": "mod_",
       "options": [
         "mq",
         "setClasses"
       ],
-      "tests": [
+      "feature-detects": [
         "touchevents"
       ]
     }

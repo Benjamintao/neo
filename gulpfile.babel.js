@@ -6,8 +6,9 @@ import sass from 'gulp-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import babel from 'gulp-babel';
-import modernizr from 'gulp-modernizr';
+import modernizr from '@thasmo/gulp-modernizr'; // https://www.npmjs.com/package/gulp-modernizr is abandoned
 import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
 import imagemin from 'gulp-imagemin';
 import connect from 'gulp-connect';
 import changed from 'gulp-changed';
@@ -21,7 +22,7 @@ export { clean };
 
 // Views
 export function views() {
-    return gulp.src(config.paths.src.views)
+    return gulp.src(config.paths.src.views.build)
         .pipe(changed(config.paths.dist.root))
         .pipe(pug(config.options.pug))
         .pipe(gulp.dest(config.paths.dist.root))
@@ -31,7 +32,7 @@ export function views() {
 // Styles
 // outputStyle: :nested, :expanded, :compact, :compressed
 export function styles() {
-    return gulp.src('src/app/assets/stylesheets/application.scss')
+    return gulp.src(config.paths.src.styles.build)
         .pipe(changed(config.paths.dist.css))
         .pipe(sass(config.options.sass))
         .pipe(postcss([
@@ -43,7 +44,7 @@ export function styles() {
 
 // Scripts
 export function scripts() {
-    return gulp.src('src/app/assets/javascripts/application.babel.js')
+    return gulp.src(config.paths.src.scripts.build)
         .pipe(changed(config.paths.dist.js))
         .pipe(babel(config.options.babel))
         .pipe(concat('application.js'))
@@ -54,8 +55,9 @@ export function scripts() {
 // Modernizr
 // Tests: https://github.com/Modernizr/Modernizr/tree/master/feature-detects
 export function modernizrBuild() {
-    return gulp.src('src/app/assets/javascripts/modernizr.js')
+    return gulp.src(config.paths.src.modernizr)
         .pipe(modernizr(config.options.modernizr))
+        .pipe(uglify())
         .pipe(gulp.dest(config.paths.dist.js));
 }
 
@@ -96,9 +98,9 @@ export function connectServer() {
 
 // Watch
 export function watch() {
-    gulp.watch(config.paths.src.views, views);
-    gulp.watch(config.paths.src.styles, styles);
-    gulp.watch(config.paths.src.scripts, scripts);
+    gulp.watch(config.paths.src.views.watch, views);
+    gulp.watch(config.paths.src.styles.watch, styles);
+    gulp.watch(config.paths.src.scripts.watch, scripts);
     gulp.watch(config.paths.src.fonts, fonts);
     gulp.watch(config.paths.src.images, images);
     gulp.watch(config.paths.src.files, files);
