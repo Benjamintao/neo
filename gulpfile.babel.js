@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer';
 import del from 'del';
 import gulp from 'gulp';
 import babel from 'gulp-babel';
+import changed from 'gulp-changed';
 import concat from 'gulp-concat';
 import connect from 'gulp-connect';
 import imagemin from 'gulp-imagemin';
@@ -21,7 +22,8 @@ export { clean };
 
 // Views
 export function views() {
-    return gulp.src(config.paths.src.views.build, {since: gulp.lastRun(views)})
+    return gulp.src(config.paths.src.views.build)
+        .pipe(changed(config.paths.dist.root))
         .pipe(pug(config.options.pug))
         .pipe(gulp.dest(config.paths.dist.root))
         .pipe(connect.reload());
@@ -30,7 +32,8 @@ export function views() {
 // Styles
 // outputStyle: :nested, :expanded, :compact, :compressed
 export function styles() {
-    return gulp.src(config.paths.src.styles.build, {since: gulp.lastRun(styles)})
+    return gulp.src(config.paths.src.styles.build)
+        .pipe(changed(config.paths.dist.css))
         .pipe(sass(config.options.sass))
         .pipe(postcss([
             autoprefixer()
@@ -57,9 +60,9 @@ export function vendorScripts() {
 }
 
 // Scripts
-// No gulp.lastRun because of bundle build
 export function scripts() {
     return gulp.src(config.paths.src.scripts.build)
+        .pipe(changed(config.paths.dist.js))
         .pipe(babel(config.options.babel))
         .pipe(concat('application.js'))
         .pipe(gulp.dest(config.paths.dist.js))
@@ -69,14 +72,16 @@ export function scripts() {
 // Fonts
 // Extensions: http://caniuse.com/#search=woff, http://caniuse.com/#search=woff2
 export function fonts() {
-    return gulp.src(config.paths.src.fonts, {since: gulp.lastRun(fonts)})
+    return gulp.src(config.paths.src.fonts)
+        .pipe(changed(config.paths.dist.fonts))
         .pipe(gulp.dest(config.paths.dist.fonts))
         .pipe(connect.reload());
 }
 
 // Images
 export function images() {
-    return gulp.src(config.paths.src.images, {since: gulp.lastRun(images)})
+    return gulp.src(config.paths.src.images)
+        .pipe(changed(config.paths.dist.img))
         .pipe(imagemin(config.options.imagemin))
         .pipe(gulp.dest(config.paths.dist.img))
         .pipe(connect.reload());
@@ -84,7 +89,8 @@ export function images() {
 
 // Files
 export function files() {
-    return gulp.src(config.paths.src.files, {since: gulp.lastRun(files)})
+    return gulp.src(config.paths.src.files)
+        .pipe(changed(config.paths.dist.root))
         .pipe(gulp.dest(config.paths.dist.root))
         .pipe(connect.reload());
 }
