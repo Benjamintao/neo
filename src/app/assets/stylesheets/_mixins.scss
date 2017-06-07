@@ -131,6 +131,24 @@
     line-height: strip-units($line-height) / strip-units($font-size);
 }
 
+// Hover
+@mixin hover($properties-list, $values-list) {
+    $properties-length: length($properties-list);
+    $values-length: length($values-list);
+
+    @if $properties-length == $values-length {
+        .mod_no-touchevents & {
+            &:hover {
+                @for $i from 1 through $properties-length {
+                    #{nth($properties-list, $i)}: nth($values-list, $i);
+                }
+            }
+        }
+    } @else {
+        @error "The number of properties (#{$properties-list}) and values (#{$values-list}) are not equal."
+    }
+}
+
 // Size
 @mixin size($width, $height: $width) {
     width: $width;

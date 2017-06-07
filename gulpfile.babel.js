@@ -8,10 +8,12 @@ import changed from 'gulp-changed';
 import concat from 'gulp-concat';
 import connect from 'gulp-connect';
 import imagemin from 'gulp-imagemin';
+import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import pug from 'gulp-pug';
 import sass from 'gulp-sass';
 import uglify from 'gulp-uglify';
+import util from 'gulp-util';
 
 // Paths
 const config = require('./gulpfile.config.json');
@@ -23,6 +25,10 @@ export { clean };
 // Views
 export function views() {
     return gulp.src(config.paths.src.views.build)
+        .pipe(plumber(function(error) {
+            util.log(error.message);
+            this.emit('end');
+        }))
         .pipe(changed(config.paths.dist.root))
         .pipe(pug(config.options.pug))
         .pipe(gulp.dest(config.paths.dist.root))
@@ -33,6 +39,10 @@ export function views() {
 // outputStyle: :nested, :expanded, :compact, :compressed
 export function styles() {
     return gulp.src(config.paths.src.styles.build)
+        .pipe(plumber(function(error) {
+            util.log(error.message);
+            this.emit('end');
+        }))
         .pipe(changed(config.paths.dist.css))
         .pipe(sass(config.options.sass))
         .pipe(postcss([
@@ -67,6 +77,13 @@ export function scripts() {
         .pipe(concat('application.js'))
         .pipe(gulp.dest(config.paths.dist.js))
         .pipe(connect.reload());
+}
+
+// Vendor fonts
+// Extensions: http://caniuse.com/#search=woff, http://caniuse.com/#search=woff2
+export function vendorFonts() {
+    return gulp.src(config.paths.src.vendorFonts)
+        .pipe(gulp.dest(config.paths.dist.fonts));
 }
 
 // Fonts
@@ -115,6 +132,7 @@ export function watch() {
 }
 
 // Build
+// Available tasks: vendorFonts
 const build = gulp.series(clean, gulp.parallel(views, styles, modernizrBuild, vendorScripts, scripts, fonts, images, files, connectServer, watch));
 
 export { build }

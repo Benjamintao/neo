@@ -23,7 +23,10 @@
         ],
         "watch": "src/app/assets/javascripts/**/*.js"
       },
-      "fonts": "src/app/assets/fonts/**/*.{wof,woff2}",
+      "vendorFonts": [
+
+      ],
+      "fonts": "src/app/assets/fonts/**/*.{woff,woff2}",
       "images": "src/app/assets/images/**/*.{gif,jpg,jpeg,png,svg}",
       "files": "src/public/**/*"
     },
