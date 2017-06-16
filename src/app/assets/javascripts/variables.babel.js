@@ -6,4 +6,6 @@ createMq([
     ['lg', 768]
 ]);
 
+// TODO: add doubleHover
+
 const TRANSITION_DURATION_BASE = 200;
