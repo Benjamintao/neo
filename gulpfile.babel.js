@@ -72,6 +72,10 @@ export function vendorScripts() {
 // Scripts
 export function scripts() {
     return gulp.src(config.paths.src.scripts.build)
+        .pipe(plumber(function(error) {
+            util.log(error.message);
+            this.emit('end');
+        }))
         .pipe(changed(config.paths.dist.js))
         .pipe(babel(config.options.babel))
         .pipe(concat('application.js'))

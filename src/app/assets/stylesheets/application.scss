@@ -7,13 +7,16 @@
 @import "styles";
 @import "helpers";
 
-@import "components/forms/checkboxes";
+@import "components/forms/buttons";
+@import "components/forms/inputs";
 @import "components/forms/labels";
-@import "components/forms/radiobuttons";
+@import "components/forms/selects";
+@import "components/forms/textareas";
 
 @import "components/container";
 @import "components/icons";
 @import "components/rub";
+@import "components/wysiwyg";
 
 @import "components/site_header";
 @import "components/site_footer";

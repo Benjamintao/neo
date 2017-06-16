@@ -19,6 +19,7 @@
           "src/app/assets/javascripts/config.babel.js",
           "src/app/assets/javascripts/functions.babel.js",
           "src/app/assets/javascripts/variables.babel.js",
+          "src/app/assets/javascripts/utilities.babel.js",
           "src/app/assets/javascripts/components/icons.babel.js"
         ],
         "watch": "src/app/assets/javascripts/**/*.js"

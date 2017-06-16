@@ -23,6 +23,7 @@
 
 // Container
 @mixin container {
+    width: 100%;
     margin: {
         right: auto;
         left: auto;
@@ -96,9 +97,8 @@
     }
 }
 
+// Grid col
 @mixin grid-col {
-    flex: 1 1 auto;
-
     @if $enable-mq == true {
         @each $mq-grid-gutter in $mq-grid-gutters {
             $mq: nth($mq-grid-gutter, 1);
@@ -121,24 +121,37 @@
     }
 }
 
-@mixin grid-col-size($size) {
-    flex: 0 0 $size * 100%;
+// Col size
+@mixin col-size($size) {
+    width: $size * 100%;
+}
+
+// Ellipsis
+// https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_ellipsis.scss
+@mixin ellipsis($width: 100%, $display: inline-block) {
+    display: $display;
+    max-width: $width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
 }
 
 // Font
-@mixin font($font-size, $line-height) {
+@mixin font($font-size, $line-height: $font-size) {
     font-size: $font-size;
     line-height: strip-units($line-height) / strip-units($font-size);
 }
 
-// Hover
-@mixin hover($properties-list, $values-list) {
+// Interact
+@mixin interact($properties-list, $values-list, $state: hover) {
     $properties-length: length($properties-list);
     $values-length: length($values-list);
 
     @if $properties-length == $values-length {
         .mod_no-touchevents & {
-            &:hover {
+            &:#{$state},
+            &.#{$state} {
                 @for $i from 1 through $properties-length {
                     #{nth($properties-list, $i)}: nth($values-list, $i);
                 }
@@ -169,32 +182,46 @@
 }
 
 // Headings
-@mixin h1($font-weight: 700) {
+@mixin heading {
+    font-family: $font-family-title;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+@mixin h1($font-weight: $heading-font-weight-base) {
+    @include heading;
     @include font(6rem, 6rem);
     font-weight: $font-weight;
 }
 
-@mixin h2($font-weight: 700) {
+@mixin h2($font-weight: $heading-font-weight-base) {
+    @include heading;
     @include font(5rem, 5rem);
     font-weight: $font-weight;
 }
 
-@mixin h3($font-weight: 700) {
+@mixin h3($font-weight: $heading-font-weight-base) {
+    @include heading;
     @include font(4rem, 4rem);
     font-weight: $font-weight;
 }
 
-@mixin h4($font-weight: 700) {
+@mixin h4($font-weight: $heading-font-weight-base) {
+    @include heading;
     @include font(3rem, 3rem);
     font-weight: $font-weight;
 }
 
-@mixin h5($font-weight: 700) {
+@mixin h5($font-weight: $heading-font-weight-base) {
+    @include heading;
     @include text-large;
     font-weight: $font-weight;
 }
 
-@mixin h6($font-weight: 700) {
+@mixin h6($font-weight: $heading-font-weight-base) {
+    @include heading;
     @include text-base;
     font-weight: $font-weight;
 }

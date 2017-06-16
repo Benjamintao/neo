@@ -16,7 +16,7 @@ html {
 body {
     @include text-base;
     min-height: 100vh;
-    background: $color-base-inverse;
+    background: $color-inverse;
     color: $color-base;
 
     @if $enable-sticky-footer == true {
@@ -25,25 +25,47 @@ body {
     }
 }
 
+// Links
 a {
+    transition: all $transition-duration-base;
+
     &.is-current {
         cursor: default;
 
-        &:hover {
+        &:visited,
+        &:hover,
+        &:active {
             color: inherit;
         }
     }
 }
 
+// Forms
 button,
 input,
 select,
 textarea {
     background: none;
     border: none;
+    color: inherit;
     font: inherit;
 }
 
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+select {
+    appearance: none;
+}
+
+textarea {
+    resize: none;
+}
+
+// Headings
 h1 {
     @include h1;
 }
@@ -68,6 +90,7 @@ h6 {
     @include h6;
 }
 
+// Images
 img {
     max-width: 100%;
 
@@ -77,20 +100,23 @@ img {
     }
 }
 
+// Lists
 ol,
 ul {
     list-style: none;
 }
 
+// Small
 small {
     @include text-small;
 }
 
+// Tables
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-textarea {
-    resize: none;
+:disabled {
+    cursor: not-allowed;
 }

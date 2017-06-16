@@ -1,15 +1,18 @@
 @charset "UTF-8";
 
 // Media queries
-$enable-mq:             true;
-$enable-mq-device:      true;
+$enable-mq:            true;
+$enable-mq-device:     true;
 
 // Components
-$enable-checkboxes:     true;
-$enable-labels:         true;
-$enable-radiobuttons:   true;
+$enable-checkboxes:    true;
+$enable-labels:        true;
+$enable-radiobuttons:  true;
+$enable-selects:       true;
+$enable-textareas:     true;
 
-$enable-sticky-footer:  true;
+$enable-sticky-footer: true;
 
-$enable-icons:          true;
-$enable-rub:            true;
+$enable-icons:         true;
+$enable-rub:           true;
+$enable-wysiwyg:       true;

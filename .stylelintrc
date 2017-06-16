@@ -1,5 +1,1 @@
-{
-  "rules": {
-    "font-weight-notation": "numeric"
-  }
-}
+// TODO: .stylelintrc rules
