@@ -9,10 +9,10 @@
         "build": "src/app/assets/stylesheets/application.scss",
         "watch": "src/app/assets/stylesheets/**/*.scss"
       },
-      "modernizr": "src/app/assets/javascripts/modernizr.js",
+      "modernizr": "src/app/assets/javascripts/vendor/modernizr.js",
       "vendorScripts": [
-        "src/vendor/assets/jquery/dist/jquery.js",
-        "src/vendor/assets/svg4everybody/dist/svg4everybody.js"
+        "src/app/assets/vendor/jquery/dist/jquery.js",
+        "src/app/assets/vendor/svg4everybody/dist/svg4everybody.js"
       ],
       "scripts": {
         "build": [

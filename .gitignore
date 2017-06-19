@@ -2,7 +2,7 @@
 
 /node_modules
 
-/src/vendor
+/src/app/assets/vendor
 /dist
 
 __MACOSX
