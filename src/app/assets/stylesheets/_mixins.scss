@@ -67,12 +67,11 @@
     align-items: $align-items;
 
     @if $main-axis == x {
-        flex-wrap: wrap;
-        align-content: flex-start;
+        flex-flow: row wrap;
     }
 
     @if $main-axis == y {
-        flex-direction: column;
+        flex-flow: column nowrap;
     }
 
     @if $enable-mq == true {
@@ -128,7 +127,7 @@
 
 // Ellipsis
 // https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_ellipsis.scss
-@mixin ellipsis($width: 100%, $display: inline-block) {
+@mixin ellipsis($width: 100%, $display: inline-flex) {
     display: $display;
     max-width: $width;
     overflow: hidden;
@@ -138,7 +137,7 @@
 }
 
 // Font
-@mixin font($font-size, $line-height: $font-size) {
+@mixin font($font-size, $line-height: 1) {
     font-size: $font-size;
     line-height: strip-units($line-height) / strip-units($font-size);
 }

@@ -9,7 +9,6 @@
 }
 
 html {
-    height: 100%;
     font-size: 62.5%;
 }
 
@@ -45,6 +44,7 @@ button,
 input,
 select,
 textarea {
+    appearance: none;
     background: none;
     border: none;
     color: inherit;
@@ -58,7 +58,7 @@ fieldset {
 }
 
 select {
-    appearance: none;
+    font-size: 16px; // Prevent iOS from page zoom on :focus
 }
 
 textarea {
@@ -68,6 +68,7 @@ textarea {
 // Headings
 h1 {
     @include h1;
+    margin: 0;
 }
 
 h2 {
@@ -90,6 +91,11 @@ h6 {
     @include h6;
 }
 
+// Hr
+hr {
+    border: none;
+}
+
 // Images
 img {
     max-width: 100%;
@@ -98,6 +104,11 @@ img {
     &[height] {
         max-width: none;
     }
+}
+
+// Figure
+figure {
+    margin: 0;
 }
 
 // Lists
@@ -117,6 +128,7 @@ table {
     border-spacing: 0;
 }
 
+// Disabled
 :disabled {
     cursor: not-allowed;
 }

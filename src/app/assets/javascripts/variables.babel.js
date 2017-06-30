@@ -2,10 +2,9 @@
 // Integer: mq.sm.int
 // String:  Modernizr.mq(mq.sm.str);
 createMq([
-    ['sm', 767],
-    ['lg', 768]
+    ['sm',  767],
+    ['md',  768],
+    ['lg', 1025]
 ]);
-
-// TODO: add doubleHover
 
 const TRANSITION_DURATION_BASE = 200;

@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
 .site-footer {
-    @if $enable-sticky-footer == true {
-        margin-top: auto;
-    }
+
 }
