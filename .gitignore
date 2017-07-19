@@ -3,7 +3,6 @@
 /node_modules
 
 /src/app/assets/vendor
-/dist
 
 __MACOSX
 .DS_Store
