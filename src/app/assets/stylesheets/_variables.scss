@@ -32,7 +32,9 @@ $container-indent: 2rem;
 $grid-gutter: 2rem;
 
 // Border radius
-$border-radius-base: .5rem;
+$border-radius-small: .25rem;
+$border-radius-base:   .5rem;
+$border-radius-large: .75rem;
 
 // Colors
 $color-base:          #000;
@@ -53,11 +55,14 @@ $font-family-text:  sans-serif;
 $font-family-title: serif;
 
 // Forms
-$checkbox-size:    2rem;
-$radiobutton-size: 2rem;
+$checkbox-size: 2rem;
+$radio-size:    2rem;
 
 // Headings
 $heading-font-weight-base: 700;
+
+// Links
+$color-link: rgba(blue, .8);
 
 // Transitions
 $transition-duration-base: .2s;

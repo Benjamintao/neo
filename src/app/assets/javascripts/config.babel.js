@@ -1,6 +1,14 @@
 const enable = {
     mq: true,
     mqDevice: true,
+
     doubleHover: true,
-    icons: true
+
+    jQueryUI: {
+        selectmenu: true
+    },
+
+    components: {
+        icons: true
+    }
 };

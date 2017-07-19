@@ -149,10 +149,18 @@
 
     @if $properties-length == $values-length {
         .mod_no-touchevents & {
-            &:#{$state},
-            &.#{$state} {
-                @for $i from 1 through $properties-length {
-                    #{nth($properties-list, $i)}: nth($values-list, $i);
+            @if $enable-double-hover == true {
+                &:#{$state},
+                &.#{$state} {
+                    @for $i from 1 through $properties-length {
+                        #{nth($properties-list, $i)}: nth($values-list, $i);
+                    }
+                }
+            } @else {
+                &:#{$state} {
+                    @for $i from 1 through $properties-length {
+                        #{nth($properties-list, $i)}: nth($values-list, $i);
+                    }
                 }
             }
         }

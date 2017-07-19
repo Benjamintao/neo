@@ -26,6 +26,7 @@ body {
 
 // Links
 a {
+    color: $color-link;
     transition: all $transition-duration-base;
 
     &.is-current {
@@ -58,7 +59,8 @@ fieldset {
 }
 
 select {
-    font-size: 16px; // Prevent iOS from page zoom on :focus
+    border-radius: 0;
+    //font-size: 16px; // Prevent iOS from page zoom on :focus
 }
 
 textarea {

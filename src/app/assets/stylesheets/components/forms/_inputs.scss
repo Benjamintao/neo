@@ -1,121 +1,23 @@
 @charset "UTF-8";
 
-// Checkboxes
-@if $enable-checkboxes == true {
-    .input-checkbox {
-        @include size($checkbox-size);
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-
+@if $enable-inputs == true {
+    .input {
         > input {
-            @include size(100%);
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            opacity: 0;
-
-            + span {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 1;
-                background: $color-inverse;
-                border: 1px solid $color-base-lightest;
-
-                &::after {
-                    @include size(0);
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%);
-                    background: $color-base;
-                    content: "";
-                    transition: all $transition-duration-base;
-                }
-            }
-
-            &:checked + span::after {
-                @include size($checkbox-size / 2);
-            }
+            display: block;
+            width: 100%;
+            padding: .5rem .75rem;
+            border: 1px solid $color-base-lightest;
 
             &:disabled {
-                + span {
-                    opacity: .2;
-                }
+                opacity: .2;
             }
         }
-    }
-}
 
-// Radiobuttons
-@if $enable-radiobuttons == true {
-    .input-radio {
-        @include size($radiobutton-size);
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-
-        > input {
-            @include size(100%);
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            opacity: 0;
-
-            + span {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 1;
-                background: $color-inverse;
-                border: 1px solid $color-base-lightest;
-                border-radius: 50%;
-
-                &::after {
-                    @include size(0);
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%);
-                    background: $color-base;
-                    border-radius: 50%;
-                    content: "";
-                    transition: all $transition-duration-base;
-                }
+        // Invalid
+        &--invalid {
+            > input {
+                border-color: $color-error;
             }
-
-            &:checked + span::after {
-                @include size($radiobutton-size / 2);
-            }
-
-            &:disabled {
-                + span {
-                    opacity: .2;
-                }
-            }
-        }
-    }
-}
-
-// Text
-.input-text {
-    > input {
-        &:disabled {
-
-        }
-    }
-
-    // Invalid
-    &--invalid {
-        > input {
-
         }
     }
 }

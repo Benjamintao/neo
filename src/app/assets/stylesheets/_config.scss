@@ -1,18 +1,27 @@
 @charset "UTF-8";
 
 // Media queries
-$enable-mq:            true;
-$enable-mq-device:     true;
+$enable-mq:        true;
+$enable-mq-device: true;
+
+// Double hover
+$enable-double-hover: true;
 
 // Components
-$enable-checkboxes:    true;
-$enable-labels:        true;
-$enable-radiobuttons:  true;
-$enable-selects:       true;
-$enable-textareas:     true;
+$enable-selectmenu: true;
 
+$enable-buttons:    true;
+$enable-checkboxes: true;
+$enable-inputs:     true;
+$enable-labels:     true;
+$enable-radios:     true;
+$enable-selects:    true;
+$enable-textareas:  true;
+
+$enable-icons:        true;
+$enable-pseudo-links: true;
+$enable-rub:          true;
+$enable-wysiwyg:      true;
+
+// Sticky footer
 $enable-sticky-footer: true;
-
-$enable-icons:         true;
-$enable-rub:           true;
-$enable-wysiwyg:       true;

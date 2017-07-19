@@ -5,7 +5,7 @@
         @if $enable-checkboxes == true {
             &--has-checkbox {
                 position: relative;
-                padding-left: $radiobutton-size * 1.5;
+                padding-left: $radio-size * 1.5;
 
                 .checkbox {
                     position: absolute;
@@ -15,12 +15,12 @@
             }
         }
 
-        @if $enable-radiobuttons == true {
-            &--has-radiobutton {
+        @if $enable-radios == true {
+            &--has-radio {
                 position: relative;
-                padding-left: $radiobutton-size * 1.5;
+                padding-left: $radio-size * 1.5;
 
-                .radiobutton {
+                .radio {
                     position: absolute;
                     top: -.2rem;
                     left: 0;

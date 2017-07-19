@@ -12,6 +12,7 @@
       "modernizr": "src/app/assets/javascripts/vendor/modernizr.js",
       "vendorScripts": [
         "src/app/assets/vendor/jquery/dist/jquery.js",
+        "src/app/assets/vendor/jquery-ui/jquery-ui.js",
         "src/app/assets/vendor/svg4everybody/dist/svg4everybody.js"
       ],
       "scripts": {
@@ -20,6 +21,7 @@
           "src/app/assets/javascripts/functions.babel.js",
           "src/app/assets/javascripts/variables.babel.js",
           "src/app/assets/javascripts/utilities.babel.js",
+          "src/app/assets/javascripts/components/jquery_ui/selectmenu.babel.js",
           "src/app/assets/javascripts/components/icons.babel.js"
         ],
         "watch": "src/app/assets/javascripts/**/*.js"

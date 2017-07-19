@@ -1,0 +1,175 @@
+extends layouts/application
+
+block title
+    title Demo / Neo
+
+block main
+    .container
+        br
+        br
+        br
+
+        article
+            h3 Links
+            br
+
+            p: a(href='#') Link
+            br
+            p: a(href='#') <span style='display: inline-block; width: 1rem; height: 1rem; margin-right: 1rem; background: #000;'></span>Link with icon
+            br
+            p: a.pseudo-link(href='#') <span class='pseudo-link__underline'>Pseudo link</span>
+            br
+            p: a.pseudo-link(href='#') <span style='display: inline-block; width: 1rem; height: 1rem; margin-right: 1rem; background: #000;'></span><span class='pseudo-link__underline'>Pseudo link with icon</span>
+
+        br
+        br
+        br
+
+        article
+            h3 Forms
+            br
+
+            section
+                h5 Buttons
+                br
+
+                div(style='width: 200px;')
+                    p: button.button(type='button') Button
+                    br
+                    p: input.button(type='submit' value='Submit' disabled)
+                    br
+                    p: a.button.button--block(href='#') Link
+
+            br
+            br
+
+            section
+                h5 Checkboxes
+                br
+
+                div
+                    span.checkbox
+                        input(type='checkbox' checked)
+                        span
+                    | &nbsp;
+                    span.checkbox
+                        input(type='checkbox' disabled)
+                        span
+                    | &nbsp;
+                    span.checkbox.checkbox--invalid
+                        input(type='checkbox')
+                        span
+            br
+            br
+
+            section
+                h5 Inputs
+                br
+
+                div(style='width: 200px;')
+                    .input
+                        input(placeholder='Placeholder')
+                    br
+                    .input
+                        input(value='Disabled' disabled)
+                    br
+                    .input.input--invalid
+                        input(value='Value')
+            br
+            br
+
+            section
+                h5 Radios
+                br
+
+                div
+                    span.radio
+                        input(type='radio' name='radio' checked)
+                        span
+                    | &nbsp;
+                    span.radio
+                        input(type='radio' name='radio' disabled)
+                        span
+                    | &nbsp;
+                    span.radio.radio--invalid
+                        input(type='radio' name='radio')
+                        span
+            br
+            br
+
+            section
+                h5 Selects
+                br
+
+                div(style='width: 200px;')
+                    .select
+                        select
+                            option(disabled selected) Placeholder
+                            option Option 1
+                            option Option 2
+                            option Option 3
+                        span
+                    br
+                    .select
+                        select(disabled)
+                            option(selected) Option 1
+                            option Option 2
+                            option Option 3
+                        span
+                    br
+                    .select.select--invalid
+                        select
+                            option(selected) Option 1
+                            option Option 2
+                            option Option 3
+                        span
+            br
+            br
+
+            section
+                h5 jQuery UI Selectmenu
+                br
+
+                div(style='width: 200px;')
+                    select.js-selectmenu
+                        option(selected disabled) Placeholder
+                        option Option 1
+                        option Option 2
+                        option Option 3
+                br
+                div(style='width: 200px;')
+                    select.js-selectmenu
+                        option(selected) Option 1
+                        option Option 2
+                        option Option 3
+            br
+            br
+
+            section
+                h5 Textareas
+                br
+
+                div(style='width: 200px;')
+                    .textarea
+                        textarea(rows='4' placeholder='Placeholder')
+                    br
+                    .textarea
+                        textarea(rows='4' disabled) Disabled
+                    br
+                    .textarea.textarea--invalid
+                        textarea(rows='4') Value
+
+        br
+        br
+        br
+
+        article
+            h3 WYSIWYG
+            br
+
+            .content
+                p 123
+
+        br
+        br
+        br

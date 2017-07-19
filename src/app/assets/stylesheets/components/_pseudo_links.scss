@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@if $enable-pseudo-links == true {
+    .pseudo-link {
+        text-decoration: none;
+
+        &__underline {
+            display: inline-block;
+            border-bottom: .09em dotted $color-link;
+            line-height: 75%;
+        }
+    }
+}

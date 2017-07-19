@@ -3,3 +3,7 @@
 .lead {
     @include text-large;
 }
+
+.nowrap {
+    white-space: nowrap;
+}

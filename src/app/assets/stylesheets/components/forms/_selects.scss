@@ -2,16 +2,38 @@
 
 @if $enable-selects == true {
     .select {
-        > select {
-            &:disabled {
+        position: relative;
 
+        > select {
+            display: block;
+            width: 100%;
+            padding: .5rem 2.5rem .5rem .75rem;
+            border: 1px solid $color-base-lightest;
+
+            + span {
+                @include size(0);
+                position: absolute;
+                top: 50%;
+                right: 1rem;
+                transform: translateY(-50%);
+                display: block;
+                pointer-events: none;
+                border: {
+                    top: .4rem solid $color-base-lighter;
+                    right: .4rem solid transparent;
+                    left: .4rem solid transparent;
+                }
+            }
+
+            &:disabled {
+                opacity: .2;
             }
         }
 
         // Invalid
         &--invalid {
             > select {
-
+                border-color: $color-error;
             }
         }
     }

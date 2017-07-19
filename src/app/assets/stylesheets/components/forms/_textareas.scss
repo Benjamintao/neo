@@ -3,15 +3,20 @@
 @if $enable-textareas == true {
     .textarea {
         > textarea {
-            &:disabled {
+            display: block;
+            width: 100%;
+            padding: .5rem .75rem;
+            border: 1px solid $color-base-lightest;
 
+            &:disabled {
+                opacity: .2;
             }
         }
 
         // Invalid
         &--invalid {
             > textarea {
-
+                border-color: $color-error;
             }
         }
     }
