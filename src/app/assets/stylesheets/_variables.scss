@@ -7,6 +7,12 @@ $mq-breakpoints: ( // for example: xs, sm, md, lg, xl
     'lg': 1025px
 );
 
+$mq-indents: (
+    'sm': 1rem,
+    'md': 2rem,
+    'lg': 3rem
+);
+
 $mq-container-widths: (
     'sm': 100%,
     'md': 100%,
@@ -14,22 +20,32 @@ $mq-container-widths: (
 );
 
 $mq-container-indents: (
-    'sm': 1rem,
-    'md': 2rem,
-    'lg': 3rem
+    'sm': map-get($mq-indents, 'sm'),
+    'md': map-get($mq-indents, 'md'),
+    'lg': map-get($mq-indents, 'lg')
 );
 
 $mq-grid-gutters: (
-    'sm': 1rem,
-    'md': 2rem,
-    'lg': 3rem
+    'sm': map-get($mq-indents, 'sm'),
+    'md': map-get($mq-indents, 'md'),
+    'lg': map-get($mq-indents, 'lg')
+);
+
+$mq-wysiwyg-indents: (
+    'sm': map-get($mq-indents, 'sm'),
+    'md': map-get($mq-indents, 'md'),
+    'lg': map-get($mq-indents, 'lg')
 );
 
 // Not responsive
-$container-width:  1440px;
-$container-indent: 2rem;
+$indent: 2rem;
 
-$grid-gutter: 2rem;
+$container-width:  1440px;
+$container-indent: $indent;
+
+$grid-gutter: $indent;
+
+$wysiwyg-indent: $indent;
 
 // Border radius
 $border-radius-small: .25rem;

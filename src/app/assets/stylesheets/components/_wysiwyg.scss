@@ -1,7 +1,27 @@
 @charset "UTF-8";
 
+$wysiwyg-indent-base:  2rem;
+$wysiwyg-indent-large: 4rem;
+
+
+
 @if $enable-wysiwyg == true {
+    // TODO: Nested lists
     .wysiwyg {
-        // TODO: Nested lists
+        // Headings
+        > h1, h2, h3, h4, h5, h6 {
+
+        }
+
+        // Lists
+        > ol,
+        > ul {
+
+        }
+
+        // Paragraphs
+        > p {
+
+        }
     }
 }

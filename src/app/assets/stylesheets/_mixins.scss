@@ -125,6 +125,67 @@
     width: $size * 100%;
 }
 
+
+// WYSIWYG
+@mixin wysiwyg-indents($top-multiplier: 1, $bottom-multiplier: $top-multiplier) {
+    $indent-top: 0;
+    $indent-bottom: 0;
+
+    @if $enable-mq == true {
+        // Top
+        @each $mq-wysiwyg-indent in $mq-wysiwyg-indents {
+            $mq: nth($mq-wysiwyg-indent, 1);
+            $wysiwyg-indent: nth($mq-wysiwyg-indent, 2);
+
+            @include mq($mq) {
+                // Top
+                @if $top-multiplier == 1 {
+                    $indent-top: $wysiwyg-indent;
+                } @else {
+                    $indent-top: $wysiwyg-indent * $top-multiplier;
+                }
+
+                &:not(:first-child) {
+                    margin-top: $indent-top;
+                }
+
+                // Bottom
+                @if $bottom-multiplier == 1 {
+                    $indent-bottom: $wysiwyg-indent;
+                } @else {
+                    $indent-bottom: $wysiwyg-indent * $bottom-multiplier;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: $indent-bottom;
+                }
+            }
+        }
+    } @else {
+        // Top
+        @if $top-multiplier == 1 {
+            $indent-top: $wysiwyg-indent;
+        } @else {
+            $indent-top: $wysiwyg-indent * $top-multiplier;
+        }
+
+        &:not(:first-child) {
+            margin-top: $indent-top;
+        }
+
+        // Bottom
+        @if $bottom-multiplier == 1 {
+            $indent-bottom: $wysiwyg-indent;
+        } @else {
+            $indent-bottom: $wysiwyg-indent * $bottom-multiplier;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: $indent-bottom;
+        }
+    }
+}
+
 // Ellipsis
 // https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_ellipsis.scss
 @mixin ellipsis($width: 100%, $display: inline-flex) {
