@@ -7,11 +7,14 @@ var enable = {
     doubleHover: true,
 
     jQueryUI: {
+        autocomplete: true,
+        datepicker: true,
         selectmenu: true
     },
 
     components: {
-        icons: true
+        icons: true,
+        wysiwyg: true
     }
 };
 'use strict';
@@ -33,15 +36,6 @@ function createMq(mqBreakpoints) {
         }
     }
 }
-'use strict';
-
-// Media queries (for example: xs, sm, md, lg, xl)
-// Integer: mq.sm.int
-// String:  Modernizr.mq(mq.sm.str);
-createMq([['sm', 767], ['md', 768], ['lg', 1025]]);
-
-var TRANSITION_DURATION_BASE = 200;
-'use strict';
 
 // Double hover
 // https://gist.github.com/artpolikarpov/3428762 (modified)
@@ -85,6 +79,34 @@ if (enable.doubleHover) {
 })(jQuery, 'smartresize');
 'use strict';
 
+// Media queries (for example: xs, sm, md, lg, xl)
+// Integer: mq.sm.int
+// String:  Modernizr.mq(mq.sm.str);
+createMq([['sm', 767], ['md', 768], ['lg', 1025]]);
+
+var TRANSITION_DURATION_BASE = 200;
+'use strict';
+
+if (enable.jQueryUI.autocomplete === true) {
+    var availableTags = ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'];
+    var $autocomplete = $('.js-autocomplete');
+
+    $autocomplete.autocomplete({
+        source: availableTags
+    });
+}
+'use strict';
+
+if (enable.jQueryUI.datepicker === true) {
+    var $datepicker = $('.js-datepicker');
+
+    $datepicker.datepicker({
+        prevText: '',
+        nextText: ''
+    });
+}
+'use strict';
+
 if (enable.jQueryUI.selectmenu === true) {
     var $selectmenu = $('.js-selectmenu');
 
@@ -102,4 +124,27 @@ if (enable.jQueryUI.selectmenu === true) {
 
 if (enable.components.icons === true) {
     svg4everybody();
+}
+'use strict';
+
+if (enable.components.wysiwyg === true) {
+    var $wysiwyg = $('.js-wysiwyg');
+
+    // Img
+    $wysiwyg.find('> p > img').each(function () {
+        $(this).css({
+            height: '',
+            width: ''
+        }).unwrap();
+    });
+
+    // Table
+    $wysiwyg.find('> table').each(function () {
+        $(this).wrap('<div class="wysiwyg__table"/>');
+    });
+
+    // Video (Youtube, Vimeo)
+    $wysiwyg.find('> iframe[src*="vimeo"], > iframe[src*="youtube"]').each(function () {
+        $(this).wrap('<div class="wysiwyg__video"/>');
+    });
 }

@@ -10,7 +10,35 @@ block main
         br
 
         article
+            h3 Typography
+            br
+            hr.hr
+            br
+
+            h1 Heading 1
+            br
+            h2 Heading 2
+            br
+            h3 Heading 3
+            br
+            h4 Heading 4
+            br
+            h5 Heading 5
+            br
+            h6 Heading 6
+            br
+            p.lead Text large
+            p Text base
+            p: small Text small
+
+        br
+        br
+        br
+
+        article
             h3 Links
+            br
+            hr.hr
             br
 
             h6: a(href='#') Heading link
@@ -28,14 +56,46 @@ block main
         br
 
         article
+            h3 Nested list
+            br
+            hr.hr
+            br
+
+            ol.nested-lists
+                li Lorem ipsum
+                li Lorem ipsum
+                li
+                    | Lorem ipsum
+                    ol
+                        li Lorem ipsum
+                        li Lorem ipsum
+                        li
+                            | Lorem ipsum
+                            ol
+                                li Lorem ipsum
+                                li Lorem ipsum
+                                li
+                                    | Lorem ipsum
+                                    ol
+                                        li Lorem ipsum
+                                        li Lorem ipsum
+                                        li Lorem ipsum
+
+        br
+        br
+        br
+
+        article
             h3 Forms
+            br
+            hr.hr
             br
 
             section
                 h5 Buttons
                 br
 
-                div(style='width: 200px;')
+                div(style='width: 280px;')
                     p: button.button(type='button') Button
                     br
                     p: input.button(type='submit' value='Submit' disabled)
@@ -68,7 +128,7 @@ block main
                 h5 Inputs
                 br
 
-                div(style='width: 200px;')
+                div(style='width: 280px;')
                     .input
                         input(placeholder='Placeholder')
                     br
@@ -103,7 +163,7 @@ block main
                 h5 Selects
                 br
 
-                div(style='width: 200px;')
+                div(style='width: 280px;')
                     .select
                         select
                             option(disabled selected) Placeholder
@@ -125,25 +185,7 @@ block main
                             option Option 2
                             option Option 3
                         span
-            br
-            br
 
-            section
-                h5 jQuery UI Selectmenu
-                br
-
-                div(style='width: 200px;')
-                    select.js-selectmenu
-                        option(selected disabled) Placeholder
-                        option Option 1
-                        option Option 2
-                        option Option 3
-                br
-                div(style='width: 200px;')
-                    select.js-selectmenu
-                        option(selected) Option 1
-                        option Option 2
-                        option Option 3
             br
             br
 
@@ -151,7 +193,7 @@ block main
                 h5 Textareas
                 br
 
-                div(style='width: 200px;')
+                div(style='width: 280px;')
                     .textarea
                         textarea(rows='4' placeholder='Placeholder')
                     br
@@ -161,6 +203,48 @@ block main
                     .textarea.textarea--invalid
                         textarea(rows='4') Value
 
+            br
+            br
+
+            section
+                h5 jQuery UI Autocomplete
+                br
+
+                div(style='width: 280px;')
+                    .input
+                        input.js-autocomplete(placeholder='Autocomplete')
+
+            br
+            br
+
+            section
+                h5 jQuery UI Datepicker
+                br
+
+                div(style='width: 280px;')
+                    .input
+                        input.js-datepicker(placeholder='Datepicker' readonly)
+
+            br
+            br
+
+            section
+                h5 jQuery UI Selectmenu
+                br
+
+                div(style='width: 280px;')
+                    select.js-selectmenu
+                        option(selected disabled) Placeholder
+                        option Option 1
+                        option Option 2
+                        option Option 3
+                br
+                div(style='width: 280px;')
+                    select.js-selectmenu
+                        option(selected) Option 1
+                        option Option 2
+                        option Option 3
+
         br
         br
         br
@@ -168,8 +252,10 @@ block main
         article
             h3 WYSIWYG
             br
+            hr.hr
+            br
 
-            .wysiwyg
+            .wysiwyg.js-wysiwyg
                 h1 Lorem ipsum
                 p <a href='#'>Lorem ipsum</a> <b>dolor</b> <i>sit</i> <strong>amet</strong>, <em>consectetur</em> <sub>adipiscing</sub> <sup>elit</sup>, <cite>sed do eiusmod</cite> <q>tempor incididunt</q> <del>ut labore</del> <ins>et dolore</ins> <mark>magna aliqua</mark>. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 blockquote
@@ -179,11 +265,13 @@ block main
 
                 h2 Lorem ipsum
                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                // Figure
+                figure
+                    img(src='http://via.placeholder.com/720x405' alt='')
+                    figcaption Caption
 
                 h3 Lorem ipsum
                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                // Img
+                p: img(src='http://via.placeholder.com/720x405' alt='')
 
                 h4 Lorem ipsum
                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -196,17 +284,89 @@ block main
                 ol
                     li Lorem ipsum
                     li Lorem ipsum
-                    li Lorem ipsum
+                    li
+                        p Lorem ipsum
+                        ol
+                            li Lorem ipsum
+                            li Lorem ipsum
+                            li
+                                p Lorem ipsum
+                                ol
+                                    li Lorem ipsum
+                                    li Lorem ipsum
+                                    li
+                                        p Lorem ipsum
+                                        ul
+                                            li Lorem ipsum
+                                            li Lorem ipsum
+                                            li Lorem ipsum
 
                 h6 Lorem ipsum
                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 ul
                     li Lorem ipsum
                     li Lorem ipsum
-                    li Lorem ipsum
+                    li
+                        p Lorem ipsum
+                        ul
+                            li Lorem ipsum
+                            li Lorem ipsum
+                            li
+                                p Lorem ipsum
+                                ul
+                                    li Lorem ipsum
+                                    li Lorem ipsum
+                                    li
+                                        p Lorem ipsum
+                                        ol
+                                            li Lorem ipsum
+                                            li Lorem ipsum
+                                            li Lorem ipsum
 
                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                // Table
+                table
+                    caption Lorem ipsum
+                    thead
+                        tr
+                            th Lorem ipsum
+                            th Lorem ipsum
+                            th Lorem ipsum
+                    tbody
+                        - var tr = 0;
+                        while tr < 4
+                            - tr++
+                            tr
+                                td Lorem ipsum dolor sit amet
+                                td Lorem ipsum dolor sit amet
+                                td Lorem ipsum dolor sit amet
+                    tfoot
+                        tr
+                            td(colspan='3') Lorem ipsum
+
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                iframe(width='560' height='315' src='https://www.youtube.com/embed/6KxtgS2lU94' frameborder='0' allowfullscreen)
+
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                ol.nested-lists
+                    li Lorem ipsum
+                    li Lorem ipsum
+                    li
+                        | Lorem ipsum
+                        ol
+                            li Lorem ipsum
+                            li Lorem ipsum
+                            li
+                                | Lorem ipsum
+                                ol
+                                    li Lorem ipsum
+                                    li Lorem ipsum
+                                    li
+                                        | Lorem ipsum
+                                        ol
+                                            li Lorem ipsum
+                                            li Lorem ipsum
+                                            li Lorem ipsum
+
                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
         br

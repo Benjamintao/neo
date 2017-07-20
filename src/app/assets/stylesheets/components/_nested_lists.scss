@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@if $enable-nested-lists == true {
+    .nested-lists {
+        @include nested-list(li, ". ", item, ol);
+
+        ol {
+            @include indents-x(0, 1, false);
+            @include indents-y(1/3, 0, false);
+        }
+
+        li {
+            @include indents-y(1/3, 0);
+        }
+    }
+}

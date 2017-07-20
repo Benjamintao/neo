@@ -7,6 +7,11 @@
 @import "styles";
 @import "helpers";
 
+// .ui-autocomplete:    z-index: 1001
+// .ui-datepicker:      z-index: 1001
+// .ui-selectmenu-menu: z-index: 1001
+@import "components/jquery_ui/autocomplete";
+@import "components/jquery_ui/datepicker";
 @import "components/jquery_ui/selectmenu";
 
 @import "components/forms/buttons";
@@ -19,6 +24,7 @@
 
 @import "components/container";
 @import "components/icons";
+@import "components/nested_lists";
 @import "components/pseudo_links";
 @import "components/rub";
 @import "components/wysiwyg";

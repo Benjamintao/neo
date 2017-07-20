@@ -2,13 +2,15 @@
 
 // Media queries
 $enable-mq:        true;
-$enable-mq-device: true;
+$enable-mq-device: false;
 
 // Double hover
 $enable-double-hover: true;
 
 // Components
-$enable-selectmenu: true;
+$enable-jquery-ui-autocomplete: true;
+$enable-jquery-ui-datepicker:   true;
+$enable-jquery-ui-selectmenu:   true;
 
 $enable-buttons:    true;
 $enable-checkboxes: true;
@@ -19,6 +21,7 @@ $enable-selects:    true;
 $enable-textareas:  true;
 
 $enable-icons:        true;
+$enable-nested-lists: true;
 $enable-pseudo-links: true;
 $enable-rub:          true;
 $enable-wysiwyg:      true;

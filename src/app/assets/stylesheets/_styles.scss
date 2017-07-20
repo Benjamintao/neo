@@ -134,3 +134,8 @@ table {
 :disabled {
     cursor: not-allowed;
 }
+
+// jQuery UI
+.ui-helper-hidden-accessible {
+    display: none;
+}

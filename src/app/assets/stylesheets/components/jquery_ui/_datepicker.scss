@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@if $enable-jquery-ui-datepicker == true {
+    .ui-datepicker {
+        position: absolute;
+        z-index: 1001;
+        padding: .75rem 1rem 1rem;
+        background: $color-inverse;
+        border: {
+            right:  1px solid $color-base-lightest;
+            bottom: 1px solid $color-base-lightest;
+            left:   1px solid $color-base-lightest;
+        }
+
+        .ui-datepicker-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .ui-datepicker-prev {
+                order: 1;
+                padding: .5rem;
+
+                .ui-icon {
+                    @include size(1rem, .5rem);
+                    display: block;
+                    border: {
+                        top:     .5rem solid transparent;
+                        bottom:  .5rem solid transparent;
+                        right:  .75rem solid $color-base-lighter;
+                    }
+                }
+            }
+
+            .ui-datepicker-title {
+                order: 2;
+                flex: 1;
+                padding: .5rem;
+                text-align: center;
+            }
+
+            .ui-datepicker-next {
+                order: 3;
+                padding: .5rem;
+
+                .ui-icon {
+                    @include size(1rem, .5rem);
+                    display: block;
+                    border: {
+                        top:     .5rem solid transparent;
+                        bottom:  .5rem solid transparent;
+                        left:   .75rem solid $color-base-lighter;
+                    }
+                }
+            }
+        }
+
+        .ui-datepicker-calendar {
+            width: 100%;
+
+            th, td {
+                text-align: right;
+            }
+
+            thead th {
+                padding: .5rem;
+            }
+
+            tbody td {
+                &.ui-datepicker-today {
+                    .ui-state-default {
+                        background: #eee;
+                    }
+                }
+
+                &.ui-datepicker-current-day {
+                    .ui-state-default {
+                        background: $color-base-light;
+                        color: $color-inverse;
+                    }
+                }
+
+                .ui-state-default {
+                    display: block;
+                    padding: .5rem;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

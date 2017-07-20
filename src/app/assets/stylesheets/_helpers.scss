@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.hr {
+    @include size(100%, .075em);
+    display: block;
+    background: $color-base-lightest;
+}
+
 .lead {
     @include text-large;
 }

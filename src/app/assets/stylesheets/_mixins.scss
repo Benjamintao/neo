@@ -21,6 +21,155 @@
     }
 }
 
+// Indents
+@mixin indents-x($multiplier-right: 1, $multiplier-left: $multiplier-right, $exclude-first-last: true) {
+    $indent-right: 0;
+    $indent-left: 0;
+
+    @if $enable-mq == true {
+        @each $mq-indent in $mq-indents {
+            $mq: nth($mq-indent, 1);
+            $indent: nth($mq-indent, 2);
+
+            @include mq($mq) {
+                // Right
+                @if $multiplier-right == 1 {
+                    $indent-right: $indent;
+                } @else {
+                    $indent-right: $indent * $multiplier-right;
+                }
+
+                @if $exclude-first-last == true {
+                    &:not(:last-child) {
+                        margin-right: $indent-right;
+                    }
+                } @else {
+                    margin-right: $indent-right;
+                }
+
+                // Left
+                @if $multiplier-left == 1 {
+                    $indent-left: $indent;
+                } @else {
+                    $indent-left: $indent * $multiplier-left;
+                }
+
+                @if $exclude-first-last == true {
+                    &:not(:first-child) {
+                        margin-left: $indent-left;
+                    }
+                } @else {
+                    margin-left: $indent-left;
+                }
+            }
+        }
+    } @else {
+        // Right
+        @if $multiplier-right == 1 {
+            $indent-right: $indent;
+        } @else {
+            $indent-right: $indent * $multiplier-right;
+        }
+
+        @if $exclude-first-last == true {
+            &:not(:last-child) {
+                margin-right: $indent-right;
+            }
+        } @else {
+            margin-right: $indent-right;
+        }
+
+        // Left
+        @if $multiplier-left == 1 {
+            $indent-left: $indent;
+        } @else {
+            $indent-left: $indent * $multiplier-left;
+        }
+
+        @if $exclude-first-last == true {
+            &:not(:first-child) {
+                margin-left: $indent-left;
+            }
+        } @else {
+            margin-left: $indent-left;
+        }
+    }
+}
+
+@mixin indents-y($multiplier-top: 1, $multiplier-bottom: $multiplier-top, $exclude-first-last: true) {
+    $indent-top: 0;
+    $indent-bottom: 0;
+
+    @if $enable-mq == true {
+        @each $mq-indent in $mq-indents {
+            $mq: nth($mq-indent, 1);
+            $indent: nth($mq-indent, 2);
+
+            @include mq($mq) {
+                // Top
+                @if $multiplier-top == 1 {
+                    $indent-top: $indent;
+                } @else {
+                    $indent-top: $indent * $multiplier-top;
+                }
+
+                @if $exclude-first-last == true {
+                    &:not(:first-child) {
+                        margin-top: $indent-top;
+                    }
+                } @else {
+                    margin-top: $indent-top;
+                }
+
+                // Bottom
+                @if $multiplier-bottom == 1 {
+                    $indent-bottom: $indent;
+                } @else {
+                    $indent-bottom: $indent * $multiplier-bottom;
+                }
+
+                @if $exclude-first-last == true {
+                    &:not(:last-child) {
+                        margin-bottom: $indent-bottom;
+                    }
+                } @else {
+                    margin-bottom: $indent-bottom;
+                }
+            }
+        }
+    } @else {
+        // Top
+        @if $multiplier-top == 1 {
+            $indent-top: $indent;
+        } @else {
+            $indent-top: $indent * $multiplier-top;
+        }
+
+        @if $exclude-first-last == true {
+            &:not(:first-child) {
+                margin-top: $indent-top;
+            }
+        } @else {
+            margin-top: $indent-top;
+        }
+
+        // Bottom
+        @if $multiplier-bottom == 1 {
+            $indent-bottom: $indent;
+        } @else {
+            $indent-bottom: $indent * $multiplier-bottom;
+        }
+
+        @if $exclude-first-last == true {
+            &:not(:last-child) {
+                margin-bottom: $indent-bottom;
+            }
+        } @else {
+            margin-bottom: $indent-bottom;
+        }
+    }
+}
+
 // Container
 @mixin container {
     width: 100%;
@@ -125,67 +274,6 @@
     width: $size * 100%;
 }
 
-
-// WYSIWYG
-@mixin wysiwyg-indents($top-multiplier: 1, $bottom-multiplier: $top-multiplier) {
-    $indent-top: 0;
-    $indent-bottom: 0;
-
-    @if $enable-mq == true {
-        // Top
-        @each $mq-wysiwyg-indent in $mq-wysiwyg-indents {
-            $mq: nth($mq-wysiwyg-indent, 1);
-            $wysiwyg-indent: nth($mq-wysiwyg-indent, 2);
-
-            @include mq($mq) {
-                // Top
-                @if $top-multiplier == 1 {
-                    $indent-top: $wysiwyg-indent;
-                } @else {
-                    $indent-top: $wysiwyg-indent * $top-multiplier;
-                }
-
-                &:not(:first-child) {
-                    margin-top: $indent-top;
-                }
-
-                // Bottom
-                @if $bottom-multiplier == 1 {
-                    $indent-bottom: $wysiwyg-indent;
-                } @else {
-                    $indent-bottom: $wysiwyg-indent * $bottom-multiplier;
-                }
-
-                &:not(:last-child) {
-                    margin-bottom: $indent-bottom;
-                }
-            }
-        }
-    } @else {
-        // Top
-        @if $top-multiplier == 1 {
-            $indent-top: $wysiwyg-indent;
-        } @else {
-            $indent-top: $wysiwyg-indent * $top-multiplier;
-        }
-
-        &:not(:first-child) {
-            margin-top: $indent-top;
-        }
-
-        // Bottom
-        @if $bottom-multiplier == 1 {
-            $indent-bottom: $wysiwyg-indent;
-        } @else {
-            $indent-bottom: $wysiwyg-indent * $bottom-multiplier;
-        }
-
-        &:not(:last-child) {
-            margin-bottom: $indent-bottom;
-        }
-    }
-}
-
 // Ellipsis
 // https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_ellipsis.scss
 @mixin ellipsis($width: 100%, $display: inline-flex) {
@@ -236,19 +324,6 @@
     height: $height;
 }
 
-// Text
-@mixin text-large {
-    @include font(2rem, 2.5rem);
-}
-
-@mixin text-base {
-    @include font(1.5rem, 2rem);
-}
-
-@mixin text-small {
-    @include font(1rem, 1.5rem);
-}
-
 // Headings
 @mixin heading {
     font-family: $font-family-title;
@@ -292,4 +367,40 @@
     @include heading;
     @include text-base;
     font-weight: $font-weight;
+}
+
+// Text
+@mixin text-large {
+    @include font(2rem, 2.5rem);
+}
+
+@mixin text-base {
+    @include font(1.5rem, 2rem);
+}
+
+@mixin text-small {
+    @include font(1rem, 1.5rem);
+}
+
+// Nested list
+// https://gabri.me/blog/sass-mixin-for-auto-numbering-with-css/
+@mixin nested-list($numbered-element, $sep, $counter: item, $nested-parent: false) {
+    $sel: ();
+
+    @if $nested-parent {
+        $sel: append($sel, unquote($nested-parent));
+    }
+
+    $sel: append($sel, unquote('&'), comma);
+
+    #{$sel}{
+        counter-reset: #{$counter};
+
+        > #{$numbered-element}{
+            &:before{
+                counter-increment: #{$counter};
+                content: if($nested-parent, counters(#{$counter}, "#{$sep} ") "#{$sep} ", counter(#{$counter}) "#{$sep} ");
+            }
+        }
+    }
 }

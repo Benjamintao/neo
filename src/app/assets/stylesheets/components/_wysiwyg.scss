@@ -1,27 +1,186 @@
 @charset "UTF-8";
 
-$wysiwyg-indent-base:  2rem;
-$wysiwyg-indent-large: 4rem;
-
-
-
 @if $enable-wysiwyg == true {
-    // TODO: Nested lists
     .wysiwyg {
         // Headings
         > h1, h2, h3, h4, h5, h6 {
+            @include indents-y(2, 1);
+        }
 
+        // Blockquote
+        > blockquote {
+            @include indents-y(2);
+            border-left: 1px solid $color-base-lightest;
+
+            @if $enable-mq == true {
+                padding-left: map-get($mq-indents, 'sm');
+
+                @include mq(md) {
+                    padding-left: map-get($mq-indents, 'md');
+                }
+
+                @include mq(lg) {
+                    padding-left: map-get($mq-indents, 'lg');
+                }
+            } @else {
+                padding-left: $indent;
+            }
+
+            > p {
+                @include text-large;
+            }
+
+            > footer {
+                margin-top: 1rem;
+
+                > cite {
+
+                }
+            }
+        }
+
+        // Figure
+        > figure {
+            @include indents-y(2);
+
+            > img {
+                display: block;
+            }
+
+            > figcaption {
+                margin-top: 1rem;
+                color: $color-base-lighter;
+            }
+        }
+
+        // Img
+        > img {
+            @include indents-y(2);
+            display: block;
         }
 
         // Lists
+        > dl {
+            @include indents-y;
+
+            > dt {
+                @include indents-y(0, 1/3);
+                font-weight: $heading-font-weight-base;
+            }
+
+            > dd {
+
+            }
+        }
+
         > ol,
         > ul {
+            @include indents-y;
 
+            &:not([class]) {
+                ol, ul {
+                    @include indents-y(1/2, 0);
+                }
+
+                li {
+                    @include indents-x(0, 1, false);
+
+                    &:not(:first-child) {
+                        @include indents-y(1/2, 0);
+                    }
+                }
+            }
+        }
+
+        > ol {
+            &:not([class]) {
+                list-style: decimal;
+
+                ol {
+                    list-style: inherit;
+                }
+
+                ul {
+                    list-style: disc;
+                }
+            }
+        }
+
+        > ul {
+            &:not([class]) {
+                list-style: disc;
+
+                ul {
+                    list-style: inherit;
+                }
+
+                ol {
+                    list-style: decimal;
+                }
+            }
         }
 
         // Paragraphs
         > p {
+            @include indents-y;
+        }
 
+        // Table
+        &__table {
+            @include indents-y(2);
+            overflow-x: auto;
+
+            > table {
+                width: 100%;
+
+                caption {
+                    color: $color-base-lighter;
+                    text-align: right;
+                }
+
+                th, td {
+                    padding: {
+                        top: .5rem;
+                        bottom: .5rem;
+                    }
+
+                    &:not(:first-child) {
+                        padding-left: .5rem;
+                    }
+
+                    &:not(:last-child) {
+                        padding-right: .5rem;
+                    }
+                }
+
+                thead th {
+                    border-bottom: 1px solid #ccc;
+                    text-align: left;
+                }
+
+                tbody td {
+                    border-bottom: 1px solid #eee;
+                }
+
+                tfoot td {
+
+                }
+            }
+        }
+
+        // Video
+        &__video {
+            @include indents-y(2);
+            position: relative;
+            padding-bottom: 56.25%; // 16:9
+            height: 0;
+
+            > iframe {
+                @include size(100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
     }
 }

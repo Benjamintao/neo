@@ -5,10 +5,13 @@ const enable = {
     doubleHover: true,
 
     jQueryUI: {
+        autocomplete: true,
+        datepicker: true,
         selectmenu: true
     },
 
     components: {
-        icons: true
+        icons: true,
+        wysiwyg: true
     }
 };
