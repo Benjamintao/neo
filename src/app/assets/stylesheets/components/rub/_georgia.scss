@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+@if $enable-rub-georgia == true {
+    @font-face {
+        src: url("../fonts/rub/georgia/alsrubl-georgia-regular.woff") format("woff");
+        font: {
+            family: ALSRubl-Georgia;
+            style: normal;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/georgia/alsrubl-georgia-italic.woff") format("woff");
+        font: {
+            family: ALSRubl-Georgia;
+            style: italic;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/georgia/alsrubl-georgia-bold.woff") format("woff");
+        font: {
+            family: ALSRubl-Georgia;
+            style: normal;
+            weight: bold;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/georgia/alsrubl-georgia-bolditalic.woff") format("woff");
+        font: {
+            family: ALSRubl-Georgia;
+            style: italic;
+            weight: bold;
+        }
+    }
+
+    .rub-georgia {
+        font-family: ALSRubl-Georgia, Georgia, serif;
+        line-height: normal;
+    }
+}

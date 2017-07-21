@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .hr {
-    @include size(100%, .075em);
+    @include size(100%, 1px);
     display: block;
     background: $color-base-lightest;
 }

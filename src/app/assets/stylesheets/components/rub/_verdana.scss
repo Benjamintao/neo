@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+@if $enable-rub-verdana == true {
+    @font-face {
+        src: url("../fonts/rub/verdana/alsrubl-verdana-regular.woff") format("woff");
+        font: {
+            family: ALSRubl-Verdana;
+            style: normal;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/verdana/alsrubl-verdana-italic.woff") format("woff");
+        font: {
+            family: ALSRubl-Verdana;
+            style: italic;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/verdana/alsrubl-verdana-bold.woff") format("woff");
+        font: {
+            family: ALSRubl-Verdana;
+            style: normal;
+            weight: bold;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/verdana/alsrubl-verdana-bolditalic.woff") format("woff");
+        font: {
+            family: ALSRubl-Verdana;
+            style: italic;
+            weight: bold;
+        }
+    }
+
+    .rub-verdana {
+        font-family: ALSRubl-Verdana, Verdana, sans-serif;
+        line-height: normal;
+    }
+}

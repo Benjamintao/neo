@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+@if $enable-rub-arial == true {
+    @font-face {
+        src: url("../fonts/rub/arial/alsrubl-arial-regular.woff") format("woff");
+        font: {
+            family: ALSRubl-Arial;
+            style: normal;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/arial/alsrubl-arial-italic.woff") format("woff");
+        font: {
+            family: ALSRubl-Arial;
+            style: italic;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/arial/alsrubl-arial-bold.woff") format("woff");
+        font: {
+            family: ALSRubl-Arial;
+            style: normal;
+            weight: bold;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/arial/alsrubl-arial-bolditalic.woff") format("woff");
+        font: {
+            family: ALSRubl-Arial;
+            style: italic;
+            weight: bold;
+        }
+    }
+
+    .rub-arial {
+        font-family: ALSRubl-Arial, Arial, sans-serif;
+        line-height: normal;
+    }
+}

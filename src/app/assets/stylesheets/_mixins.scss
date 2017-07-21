@@ -399,7 +399,7 @@
         > #{$numbered-element}{
             &:before{
                 counter-increment: #{$counter};
-                content: if($nested-parent, counters(#{$counter}, "#{$sep} ") "#{$sep} ", counter(#{$counter}) "#{$sep} ");
+                content: if($nested-parent, counters(#{$counter}, "#{$sep}") "#{$sep} ", counter(#{$counter}) "#{$sep}");
             }
         }
     }

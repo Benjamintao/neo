@@ -2,7 +2,7 @@
 
 @if $enable-nested-lists == true {
     .nested-lists {
-        @include nested-list(li, ". ", item, ol);
+        @include nested-list(li, ".", item, ol);
 
         ol {
             @include indents-x(0, 1, false);
