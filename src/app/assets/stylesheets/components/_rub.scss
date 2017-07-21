@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+// Sans
+@if $enable-rub-sans == true {
+    @font-face {
+        src: url("../fonts/rub/arial/alsrubl-arial-regular.woff") format("woff");
+        font: {
+            family: ALSRubl-Arial;
+            style: normal;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/arial/alsrubl-arial-italic.woff") format("woff");
+        font: {
+            family: ALSRubl-Arial;
+            style: italic;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/arial/alsrubl-arial-bold.woff") format("woff");
+        font: {
+            family: ALSRubl-Arial;
+            style: normal;
+            weight: bold;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/arial/alsrubl-arial-bolditalic.woff") format("woff");
+        font: {
+            family: ALSRubl-Arial;
+            style: italic;
+            weight: bold;
+        }
+    }
+
+    .rub-sans {
+        font-family: ALSRubl-Arial, Arial, sans-serif;
+        line-height: normal;
+    }
+}
+
+// Serif
+@if $enable-rub-serif == true {
+    @font-face {
+        src: url("../fonts/rub/times/alsrubl-times-regular.woff") format("woff");
+        font: {
+            family: ALSRubl-Times;
+            style: normal;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/times/alsrubl-times-italic.woff") format("woff");
+        font: {
+            family: ALSRubl-Times;
+            style: italic;
+            weight: normal;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/times/alsrubl-times-bold.woff") format("woff");
+        font: {
+            family: ALSRubl-Times;
+            style: normal;
+            weight: bold;
+        }
+    }
+
+    @font-face {
+        src: url("../fonts/rub/times/alsrubl-times-bolditalic.woff") format("woff");
+        font: {
+            family: ALSRubl-Times;
+            style: italic;
+            weight: bold;
+        }
+    }
+
+    .rub-serif {
+        font-family: ALSRubl-Times, "Times New Roman", Times, serif;
+        line-height: normal;
+    }
+}

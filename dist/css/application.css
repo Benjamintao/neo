@@ -1028,157 +1028,6 @@ a.button {
   border-color: red;
 }
 
-@font-face {
-  src: url("../fonts/rub/arial/alsrubl-arial-regular.woff") format("woff");
-  font-family: ALSRubl-Arial;
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/arial/alsrubl-arial-italic.woff") format("woff");
-  font-family: ALSRubl-Arial;
-  font-style: italic;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/arial/alsrubl-arial-bold.woff") format("woff");
-  font-family: ALSRubl-Arial;
-  font-style: normal;
-  font-weight: bold;
-}
-
-@font-face {
-  src: url("../fonts/rub/arial/alsrubl-arial-bolditalic.woff") format("woff");
-  font-family: ALSRubl-Arial;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.rub-arial {
-  font-family: ALSRubl-Arial, Arial, sans-serif;
-  line-height: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/georgia/alsrubl-georgia-regular.woff") format("woff");
-  font-family: ALSRubl-Georgia;
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/georgia/alsrubl-georgia-italic.woff") format("woff");
-  font-family: ALSRubl-Georgia;
-  font-style: italic;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/georgia/alsrubl-georgia-bold.woff") format("woff");
-  font-family: ALSRubl-Georgia;
-  font-style: normal;
-  font-weight: bold;
-}
-
-@font-face {
-  src: url("../fonts/rub/georgia/alsrubl-georgia-bolditalic.woff") format("woff");
-  font-family: ALSRubl-Georgia;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.rub-georgia {
-  font-family: ALSRubl-Georgia, Georgia, serif;
-  line-height: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/tahoma/alsrubl-tahoma-regular.woff") format("woff");
-  font-family: ALSRubl-Tahoma;
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/tahoma/alsrubl-tahoma-bold.woff") format("woff");
-  font-family: ALSRubl-Tahoma;
-  font-style: normal;
-  font-weight: bold;
-}
-
-.rub-tahoma {
-  font-family: ALSRubl-Tahoma, Tahoma, sans-serif;
-  line-height: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/times/alsrubl-times-regular.woff") format("woff");
-  font-family: ALSRubl-Times;
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/times/alsrubl-times-italic.woff") format("woff");
-  font-family: ALSRubl-Times;
-  font-style: italic;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/times/alsrubl-times-bold.woff") format("woff");
-  font-family: ALSRubl-Times;
-  font-style: normal;
-  font-weight: bold;
-}
-
-@font-face {
-  src: url("../fonts/rub/times/alsrubl-times-bolditalic.woff") format("woff");
-  font-family: ALSRubl-Times;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.rub-times {
-  font-family: ALSRubl-Times, "Times New Roman", Times, serif;
-  line-height: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/verdana/alsrubl-verdana-regular.woff") format("woff");
-  font-family: ALSRubl-Verdana;
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/verdana/alsrubl-verdana-italic.woff") format("woff");
-  font-family: ALSRubl-Verdana;
-  font-style: italic;
-  font-weight: normal;
-}
-
-@font-face {
-  src: url("../fonts/rub/verdana/alsrubl-verdana-bold.woff") format("woff");
-  font-family: ALSRubl-Verdana;
-  font-style: normal;
-  font-weight: bold;
-}
-
-@font-face {
-  src: url("../fonts/rub/verdana/alsrubl-verdana-bolditalic.woff") format("woff");
-  font-family: ALSRubl-Verdana;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.rub-verdana {
-  font-family: ALSRubl-Verdana, Verdana, sans-serif;
-  line-height: normal;
-}
-
 .container {
   width: 100%;
   margin-right: auto;
@@ -1320,6 +1169,72 @@ a.button {
   display: inline-block;
   border-bottom: 0.09em dotted rgba(0, 0, 255, 0.8);
   line-height: 75%;
+}
+
+@font-face {
+  src: url("../fonts/rub/arial/alsrubl-arial-regular.woff") format("woff");
+  font-family: ALSRubl-Arial;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("../fonts/rub/arial/alsrubl-arial-italic.woff") format("woff");
+  font-family: ALSRubl-Arial;
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("../fonts/rub/arial/alsrubl-arial-bold.woff") format("woff");
+  font-family: ALSRubl-Arial;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  src: url("../fonts/rub/arial/alsrubl-arial-bolditalic.woff") format("woff");
+  font-family: ALSRubl-Arial;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.rub-sans {
+  font-family: ALSRubl-Arial, Arial, sans-serif;
+  line-height: normal;
+}
+
+@font-face {
+  src: url("../fonts/rub/times/alsrubl-times-regular.woff") format("woff");
+  font-family: ALSRubl-Times;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("../fonts/rub/times/alsrubl-times-italic.woff") format("woff");
+  font-family: ALSRubl-Times;
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("../fonts/rub/times/alsrubl-times-bold.woff") format("woff");
+  font-family: ALSRubl-Times;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  src: url("../fonts/rub/times/alsrubl-times-bolditalic.woff") format("woff");
+  font-family: ALSRubl-Times;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.rub-serif {
+  font-family: ALSRubl-Times, "Times New Roman", Times, serif;
+  line-height: normal;
 }
 
 @media all and (max-width: 767px) {

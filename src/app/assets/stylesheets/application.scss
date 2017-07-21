@@ -7,9 +7,9 @@
 @import "styles";
 @import "helpers";
 
-// .ui-autocomplete:    z-index: 1001
-// .ui-datepicker:      z-index: 1001
-// .ui-selectmenu-menu: z-index: 1001
+// .ui-autocomplete,
+// .ui-datepicker,
+// .ui-selecmenu-menu {z-index: 1001;}
 @import "components/jquery_ui/autocomplete";
 @import "components/jquery_ui/datepicker";
 @import "components/jquery_ui/selectmenu";
@@ -22,16 +22,11 @@
 @import "components/forms/selects";
 @import "components/forms/textareas";
 
-@import "components/rub/arial";
-@import "components/rub/georgia";
-@import "components/rub/tahoma";
-@import "components/rub/times";
-@import "components/rub/verdana";
-
 @import "components/container";
 @import "components/icons";
 @import "components/nested_lists";
 @import "components/pseudo_links";
+@import "components/rub";
 @import "components/wysiwyg";
 
 @import "components/site_header";
