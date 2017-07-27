@@ -63,8 +63,8 @@ export function modernizrBuild() {
 
 // Vendors
 export function vendorScripts() {
-    return gulp.src(config.paths.src.vendorScripts)
-        .pipe(concat('vendor.js'))
+    return gulp.src(config.paths.src.vendorScripts.build)
+        .pipe(concat(config.paths.src.vendorScripts.concat))
         .pipe(uglify())
         .pipe(gulp.dest(config.paths.dist.js));
 }
@@ -78,7 +78,7 @@ export function scripts() {
         }))
         .pipe(changed(config.paths.dist.js))
         .pipe(babel(config.options.babel))
-        .pipe(concat('application.js'))
+        .pipe(concat(config.paths.src.scripts.concat))
         .pipe(gulp.dest(config.paths.dist.js))
         .pipe(connect.reload());
 }
@@ -86,7 +86,7 @@ export function scripts() {
 // Vendor fonts
 // Extensions: http://caniuse.com/#search=woff, http://caniuse.com/#search=woff2
 export function vendorFonts() {
-    return gulp.src(config.paths.src.vendorFonts)
+    return gulp.src(config.paths.src.vendorFonts.build)
         .pipe(gulp.dest(config.paths.dist.fonts));
 }
 
@@ -136,8 +136,7 @@ export function watch() {
 }
 
 // Build
-// Available tasks: vendorFonts
-const build = gulp.series(clean, gulp.parallel(views, styles, modernizrBuild, vendorScripts, scripts, fonts, images, files, connectServer, watch));
+const build = gulp.series(clean, gulp.parallel(views, styles, modernizrBuild, vendorScripts, scripts, vendorFonts, fonts, images, files, connectServer, watch));
 
 export { build }
 

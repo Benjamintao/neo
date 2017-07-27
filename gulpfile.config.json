@@ -10,12 +10,15 @@
         "watch": "src/app/assets/stylesheets/**/*.scss"
       },
       "modernizr": "src/app/assets/javascripts/vendor/modernizr.js",
-      "vendorScripts": [
-        "src/app/assets/vendor/jquery/dist/jquery.js",
-        "src/app/assets/vendor/jquery-ui/jquery-ui.js",
-        "src/app/assets/vendor/jquery-ui/ui/i18n/datepicker-ru.js",
-        "src/app/assets/vendor/svg4everybody/dist/svg4everybody.js"
-      ],
+      "vendorScripts": {
+        "build": [
+          "src/app/assets/vendor/jquery/dist/jquery.js",
+          "src/app/assets/vendor/jquery-ui/jquery-ui.js",
+          "src/app/assets/vendor/jquery-ui/ui/i18n/datepicker-ru.js",
+          "src/app/assets/vendor/svg4everybody/dist/svg4everybody.js"
+        ],
+        "concat": "vendor.js"
+      },
       "scripts": {
         "build": [
           "src/app/assets/javascripts/config.babel.js",
@@ -27,11 +30,14 @@
           "src/app/assets/javascripts/components/icons.babel.js",
           "src/app/assets/javascripts/components/wysiwyg.babel.js"
         ],
+        "concat": "application.js",
         "watch": "src/app/assets/javascripts/**/*.js"
       },
-      "vendorFonts": [
-
-      ],
+      "vendorFonts": {
+        "build": [
+          " "
+        ]
+      },
       "fonts": "src/app/assets/fonts/**/*.{woff,woff2}",
       "images": "src/app/assets/images/**/*.{gif,jpg,jpeg,png,svg}",
       "files": "src/public/**/*"
