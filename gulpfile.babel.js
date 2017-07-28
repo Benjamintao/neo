@@ -61,7 +61,7 @@ export function modernizrBuild() {
         .pipe(gulp.dest(config.paths.dist.js));
 }
 
-// Vendors
+// Vendor scripts
 export function vendorScripts() {
     return gulp.src(config.paths.src.vendorScripts.build)
         .pipe(concat(config.paths.src.vendorScripts.concat))

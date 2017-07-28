@@ -2,7 +2,7 @@
 
 /node_modules
 
-/src/app/assets/vendor
+/src/app/assets/vendors
 
 __MACOSX
 .DS_Store
