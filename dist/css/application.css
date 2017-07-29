@@ -620,7 +620,7 @@ table {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.lead {
+.text-lead {
   font-size: 2rem;
   line-height: 1.25;
 }
