@@ -324,6 +324,19 @@
     height: $height;
 }
 
+// Text
+@mixin text-large {
+    @include font(2rem, 2.5rem);
+}
+
+@mixin text-base {
+    @include font(1.5rem, 2rem);
+}
+
+@mixin text-small {
+    @include font(1rem, 1.5rem);
+}
+
 // Headings
 @mixin heading {
     font-family: $font-family-title;
@@ -367,19 +380,6 @@
     @include heading;
     @include text-base;
     font-weight: $font-weight;
-}
-
-// Text
-@mixin text-large {
-    @include font(2rem, 2.5rem);
-}
-
-@mixin text-base {
-    @include font(1.5rem, 2rem);
-}
-
-@mixin text-small {
-    @include font(1rem, 1.5rem);
 }
 
 // Nested list
