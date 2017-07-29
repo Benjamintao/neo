@@ -98,11 +98,11 @@ if (enable.jQueryUI.autocomplete === true) {
 'use strict';
 
 if (enable.jQueryUI.datepicker === true) {
-    var $datepicker = $('.js-datepicker');
+    var $datepicker = $('.js-datepicker-input');
 
     // Force Datepicker open always under input
     $.extend($.datepicker, {
-        _checkOffset: function _checkOffset(inst, offset, isFixed) {
+        _checkOffset: function _checkOffset(inst, offset) {
             return offset;
         }
     });
