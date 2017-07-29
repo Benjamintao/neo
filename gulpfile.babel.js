@@ -103,7 +103,12 @@ export function fonts() {
 export function images() {
     return gulp.src(config.paths.src.images)
         .pipe(changed(config.paths.dist.img))
-        .pipe(imagemin(config.options.imagemin))
+        .pipe(imagemin([
+            imagemin.gifsicle(config.options.imagemin.gifsicle),
+            imagemin.jpegtran(config.options.imagemin.jpegtran),
+            imagemin.optipng(config.options.imagemin.optipng),
+            imagemin.svgo(config.options.imagemin.svgo) // {cleanupIDs: false} to keep <symbol>
+        ]))
         .pipe(gulp.dest(config.paths.dist.img))
         .pipe(connect.reload());
 }

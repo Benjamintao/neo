@@ -71,7 +71,22 @@
       ]
     },
     "imagemin": {
-      "optimizationLevel": 5
+      "gifsicle": {
+        "interlaced": true
+      },
+      "jpegtran": {
+        "progressive": true
+      },
+      "optipng": {
+        "optimizationLevel": 5
+      },
+      "svgo": {
+        "plugins": [
+          {
+            "cleanupIDs": false
+          }
+        ]
+      }
     }
   }
 }
