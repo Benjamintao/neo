@@ -36,8 +36,12 @@
                 }
             }
 
-            &:checked + span::after {
-                @include size($checkbox-size / 2);
+            &:checked {
+                + span {
+                    &::after {
+                        @include size($checkbox-size / 2);
+                    }
+                }
             }
 
             &:disabled {

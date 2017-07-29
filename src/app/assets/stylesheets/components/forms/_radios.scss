@@ -38,8 +38,12 @@
                 }
             }
 
-            &:checked + span::after {
-                @include size($radio-size / 2);
+            &:checked {
+                + span {
+                    &::after {
+                        @include size($radio-size / 2);
+                    }
+                }
             }
 
             &:disabled {
