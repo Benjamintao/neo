@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+.text-lead {
+    @include text-large;
+}

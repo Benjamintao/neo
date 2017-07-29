@@ -10,7 +10,7 @@
         // Blockquote
         > blockquote {
             @include indents-y(2);
-            border-left: 1px solid $color-base-lightest;
+            border-left: 1px solid $color-lightest;
 
             @if $enable-mq == true {
                 padding-left: map-get($mq-indents, 'sm');
@@ -49,7 +49,7 @@
 
             > figcaption {
                 margin-top: 1rem;
-                color: $color-base-lighter;
+                color: $color-lighter;
             }
         }
 
@@ -134,7 +134,7 @@
                 width: 100%;
 
                 caption {
-                    color: $color-base-lighter;
+                    color: $color-lighter;
                     text-align: right;
                 }
 

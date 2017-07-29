@@ -8,9 +8,9 @@
         overflow-y: auto;
         background: #fff;
         border: {
-            right:  1px solid $color-base-lightest;
-            bottom: 1px solid $color-base-lightest;
-            left:   1px solid $color-base-lightest;
+            right:  1px solid $color-lightest;
+            bottom: 1px solid $color-lightest;
+            left:   1px solid $color-lightest;
         }
 
         .ui-menu-item-wrapper {

@@ -8,7 +8,7 @@
             display: block;
             width: 100%;
             padding: .5rem 2.5rem .5rem .75rem;
-            border: 1px solid $color-base-lightest;
+            border: 1px solid $color-lightest;
 
             + span {
                 @include size(0);
@@ -19,7 +19,7 @@
                 display: block;
                 pointer-events: none;
                 border: {
-                    top: .4rem solid $color-base-lighter;
+                    top: .4rem solid $color-lighter;
                     right: .4rem solid transparent;
                     left: .4rem solid transparent;
                 }

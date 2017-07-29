@@ -3,11 +3,7 @@
 .hr {
     @include size(100%, 1px);
     display: block;
-    background: $color-base-lightest;
-}
-
-.text-lead {
-    @include text-large;
+    background: $color-lightest;
 }
 
 .nowrap {
