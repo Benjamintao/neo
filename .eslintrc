@@ -1,4 +1,3 @@
-// TODO: .eslintrc rules
 {
   "parserOptions": {
     "ecmaVersion": 6,
