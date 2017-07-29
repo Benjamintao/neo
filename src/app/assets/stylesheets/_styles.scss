@@ -15,8 +15,12 @@ html {
 body {
     @include text-base;
     min-height: 100vh;
-    background: $color-inverse;
+    background: #fff;
     color: $color-base;
+    font: {
+        family: $font-family-text;
+        weight: $font-weight-text;
+    }
 
     @if $enable-sticky-footer == true {
         display: flex;

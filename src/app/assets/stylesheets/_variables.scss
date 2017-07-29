@@ -50,8 +50,6 @@ $color-base-light:    rgba($color-base, .8);
 $color-base-lighter:  rgba($color-base, .6);
 $color-base-lightest: rgba($color-base, .4);
 
-$color-inverse:       #fff;
-
 $color-brand:         #brand;
 
 $color-error:         red;
@@ -61,13 +59,12 @@ $color-success:       green;
 // Fonts
 $font-family-text:  sans-serif;
 $font-family-title: serif;
+$font-weight-text:  400;
+$font-weight-title: 700;
 
 // Forms
 $checkbox-size: 2rem;
 $radio-size:    2rem;
-
-// Headings
-$heading-font-weight-base: 700;
 
 // Links
 $color-link: rgba(blue, .8);

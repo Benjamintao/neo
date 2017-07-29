@@ -6,7 +6,7 @@
         z-index: 1001;
         display: none;
         padding: .75rem 1rem 1rem;
-        background: $color-inverse;
+        background: #fff;
         border: {
             right:  1px solid $color-base-lightest;
             bottom: 1px solid $color-base-lightest;
@@ -77,7 +77,7 @@
                 &.ui-datepicker-current-day {
                     .ui-state-default {
                         background: $color-base-light;
-                        color: $color-inverse;
+                        color: #fff;
                     }
                 }
 
