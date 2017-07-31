@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
 @if $enable-jquery-ui-autocomplete == true {
+    .ui-autocomplete-input {
+        &.ui-autocomplete-input-opened {
+
+        }
+    }
+
     .ui-autocomplete {
         position: absolute;
         z-index: 1001;

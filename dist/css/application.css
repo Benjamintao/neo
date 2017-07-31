@@ -1074,11 +1074,13 @@ a.button {
 .icon {
   fill: #000;
   fill-rule: evenodd;
+  -webkit-transition: fill 0.2s;
+  transition: fill 0.2s;
 }
 
-.icon--16 {
-  width: 1.6rem;
-  height: 1.6rem;
+.icon--20 {
+  width: 2rem;
+  height: 2rem;
 }
 
 .nested-lists ol, .nested-lists {
@@ -1166,7 +1168,7 @@ a.button {
 .pseudo-link__underline {
   display: inline-block;
   border-bottom: 0.09em dotted rgba(0, 0, 255, 0.8);
-  line-height: 75%;
+  line-height: 80%;
 }
 
 @font-face {

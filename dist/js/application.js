@@ -89,18 +89,36 @@ var TRANSITION_DURATION_BASE = 200;
 
 if (enable.jQueryUI.autocomplete === true) {
     var availableTags = ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'];
-    var $autocomplete = $('.js-autocomplete');
+    var $autocomplete = $('.js-autocomplete-input');
 
     $autocomplete.autocomplete({
-        source: availableTags
+        source: availableTags,
+        open: function open(event, ui) {
+            $(event.target).addClass('ui-autocomplete-input-opened');
+        },
+        close: function close(event, ui) {
+            $(event.target).removeClass('ui-autocomplete-input-opened');
+        }
+    });
+
+    $(window).smartresize(function () {
+        $autocomplete.autocomplete('close');
     });
 }
 'use strict';
 
 if (enable.jQueryUI.datepicker === true) {
-    var $datepicker = $('.js-datepicker-input');
+    var datepickerSetMinWidth = function datepickerSetMinWidth(input, dpDiv) {
+        setTimeout(function () {
+            $(dpDiv).css('min-width', '').css('min-width', $(input).outerWidth());
+        }, 0);
+    };
 
     // Force Datepicker open always under input
+
+
+    var $datepicker = $('.js-datepicker-input');
+
     $.extend($.datepicker, {
         _checkOffset: function _checkOffset(inst, offset) {
             return offset;
@@ -109,13 +127,31 @@ if (enable.jQueryUI.datepicker === true) {
 
     $datepicker.datepicker({
         prevText: '',
-        nextText: ''
+        nextText: '',
+        beforeShow: function beforeShow(input, inst) {
+            $(input).addClass('hasDatepickerFocus');
+
+            datepickerSetMinWidth(input, inst.dpDiv);
+        },
+        onChangeMonthYear: function onChangeMonthYear(year, month, inst) {
+            datepickerSetMinWidth(inst.input, inst.dpDiv);
+        },
+        onClose: function onClose(dateText, inst) {
+            $(inst.input).removeClass('hasDatepickerFocus');
+        },
+        onSelect: function onSelect(dateText, inst) {
+            $(inst.input).removeClass('hasDatepickerFocus');
+        }
+    });
+
+    $(window).smartresize(function () {
+        $datepicker.datepicker('hide');
     });
 }
 'use strict';
 
 if (enable.jQueryUI.selectmenu === true) {
-    var $selectmenu = $('.js-selectmenu');
+    var $selectmenu = $('.js-selectmenu-select');
 
     $selectmenu.selectmenu({
         create: function create(event, ui) {
@@ -125,6 +161,10 @@ if (enable.jQueryUI.selectmenu === true) {
                 $select.next('.ui-selectmenu-button').find('.ui-selectmenu-text').addClass('ui-state-placeholder');
             }
         }
+    });
+
+    $(window).smartresize(function () {
+        $selectmenu.selectmenu('close');
     });
 }
 "use strict";

@@ -4,9 +4,10 @@
     .icon {
         fill: $color-base;
         fill-rule: evenodd;
+        transition: fill $transition-duration-base;
 
-        &--16 {
-            @include size(1.6rem);
+        &--20 {
+            @include size(2rem);
         }
     }
 }

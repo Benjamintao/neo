@@ -1,5 +1,5 @@
 if (enable.jQueryUI.selectmenu === true) {
-    const $selectmenu = $('.js-selectmenu');
+    const $selectmenu = $('.js-selectmenu-select');
 
     $selectmenu.selectmenu({
         create: function(event, ui) {
@@ -16,5 +16,9 @@ if (enable.jQueryUI.selectmenu === true) {
                     .addClass('ui-state-placeholder');
             }
         }
+    });
+
+    $(window).smartresize(function () {
+        $selectmenu.selectmenu('close');
     });
 }

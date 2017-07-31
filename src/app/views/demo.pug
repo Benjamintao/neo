@@ -45,11 +45,17 @@ block main
             br
             p: a(href='#') Link
             br
-            p: a(href='#') <span style='display: inline-block; width: 1rem; height: 1rem; margin-right: 1rem; background: #000;'></span>Link with icon
+            p: a(href='#' style='display: inline-flex; align-items: center;')
+                svg.icon.icon--20(role='img')
+                    use(xlink:href='img/icons.svg#icon-check')
+                | Link with icon
             br
             p: a.pseudo-link(href='#') <span class='pseudo-link__underline'>Pseudo link</span>
             br
-            p: a.pseudo-link(href='#') <span style='display: inline-block; width: 1rem; height: 1rem; margin-right: 1rem; background: #000;'></span><span class='pseudo-link__underline'>Pseudo link with icon</span>
+            p: a.pseudo-link(href='#' style='display: inline-flex; align-items: center;')
+                svg.icon.icon--20(role='img')
+                    use(xlink:href='img/icons.svg#icon-check')
+                span.pseudo-link__underline Pseudo link with icon
 
         br
         br
@@ -62,8 +68,8 @@ block main
             br
 
             p
-                svg.icon(role='img')
-                    use(xlink:href='img/icons.svg#icon')
+                svg.icon.icon--20(role='img')
+                    use(xlink:href='img/icons.svg#icon-check')
 
         br
         br
@@ -257,7 +263,7 @@ block main
 
                 div(style='width: 280px;')
                     .input
-                        input.js-autocomplete(placeholder='Autocomplete')
+                        input.js-autocomplete-input(placeholder='Autocomplete')
 
             br
             br
@@ -278,14 +284,14 @@ block main
                 br
 
                 div(style='width: 280px;')
-                    select.js-selectmenu
+                    select.js-selectmenu-select
                         option(selected disabled) Placeholder
                         option Option 1
                         option Option 2
                         option Option 3
                 br
                 div(style='width: 280px;')
-                    select.js-selectmenu
+                    select.js-selectmenu-select
                         option(selected) Option 1
                         option Option 2
                         option Option 3
