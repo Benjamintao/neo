@@ -901,6 +901,7 @@ a.button {
 
 .label--has-checkbox {
   position: relative;
+  display: inline-block;
   padding-left: 3rem;
 }
 
@@ -912,6 +913,7 @@ a.button {
 
 .label--has-radio {
   position: relative;
+  display: inline-block;
   padding-left: 3rem;
 }
 
