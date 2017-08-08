@@ -9,7 +9,7 @@
         "build": "src/app/assets/stylesheets/application.scss",
         "watch": "src/app/assets/stylesheets/**/*.scss"
       },
-      "modernizr": "src/app/assets/javascripts/vendor/modernizr.js",
+      "modernizr": "src/app/assets/javascripts/vendors/modernizr.js",
       "vendorScripts": {
         "build": [
           "src/app/assets/vendors/jquery/dist/jquery.js",
