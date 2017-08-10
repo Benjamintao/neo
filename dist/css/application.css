@@ -844,6 +844,7 @@ a.button {
   top: 0;
   left: 0;
   z-index: 2;
+  opacity: 0;
 }
 
 .checkbox > input + span {
@@ -938,6 +939,7 @@ a.button {
   top: 0;
   left: 0;
   z-index: 2;
+  opacity: 0;
 }
 
 .radio > input + span {
