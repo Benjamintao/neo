@@ -67,6 +67,7 @@
         "setClasses"
       ],
       "feature-detects": [
+        "css/flexboxtweener",
         "touchevents"
       ]
     },
