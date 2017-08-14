@@ -1180,8 +1180,8 @@ a.button {
 
 .pseudo-link__underline {
   display: inline-block;
-  border-bottom: 0.09em dotted rgba(0, 0, 255, 0.8);
-  line-height: 80%;
+  border-bottom: 0.5pt dotted rgba(0, 0, 255, 0.8);
+  line-height: 90%;
 }
 
 @font-face {
