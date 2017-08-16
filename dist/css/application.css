@@ -773,9 +773,7 @@ table {
 }
 
 .ui-selectmenu-button .ui-selectmenu-text {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-block;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

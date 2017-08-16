@@ -276,7 +276,7 @@
 
 // Ellipsis
 // https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_ellipsis.scss
-@mixin ellipsis($width: 100%, $display: inline-flex) {
+@mixin ellipsis($width: 100%, $display: inline-block) {
     display: $display;
     max-width: $width;
     overflow: hidden;
