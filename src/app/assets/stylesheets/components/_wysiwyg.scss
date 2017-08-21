@@ -75,11 +75,11 @@
 
         > ol,
         > ul {
-            @include indents-y;
-
             &:not([class]) {
+                @include indents-y;
+
                 ol, ul {
-                    @include indents-y(1/2, 0);
+                    @include indents-y(1/2, 0, false);
                 }
 
                 li {

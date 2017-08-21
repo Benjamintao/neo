@@ -1459,73 +1459,61 @@ a.button {
 }
 
 @media all and (max-width: 767px) {
-  .wysiwyg > ol:not(:first-child),
-  .wysiwyg > ul:not(:first-child) {
+  .wysiwyg > ol:not([class]):not(:first-child),
+  .wysiwyg > ul:not([class]):not(:first-child) {
     margin-top: 1rem;
   }
-  .wysiwyg > ol:not(:last-child),
-  .wysiwyg > ul:not(:last-child) {
+  .wysiwyg > ol:not([class]):not(:last-child),
+  .wysiwyg > ul:not([class]):not(:last-child) {
     margin-bottom: 1rem;
   }
 }
 
 @media all and (min-width: 768px) {
-  .wysiwyg > ol:not(:first-child),
-  .wysiwyg > ul:not(:first-child) {
+  .wysiwyg > ol:not([class]):not(:first-child),
+  .wysiwyg > ul:not([class]):not(:first-child) {
     margin-top: 2rem;
   }
-  .wysiwyg > ol:not(:last-child),
-  .wysiwyg > ul:not(:last-child) {
+  .wysiwyg > ol:not([class]):not(:last-child),
+  .wysiwyg > ul:not([class]):not(:last-child) {
     margin-bottom: 2rem;
   }
 }
 
 @media all and (min-width: 1025px) {
-  .wysiwyg > ol:not(:first-child),
-  .wysiwyg > ul:not(:first-child) {
+  .wysiwyg > ol:not([class]):not(:first-child),
+  .wysiwyg > ul:not([class]):not(:first-child) {
     margin-top: 3rem;
   }
-  .wysiwyg > ol:not(:last-child),
-  .wysiwyg > ul:not(:last-child) {
+  .wysiwyg > ol:not([class]):not(:last-child),
+  .wysiwyg > ul:not([class]):not(:last-child) {
     margin-bottom: 3rem;
   }
 }
 
 @media all and (max-width: 767px) {
-  .wysiwyg > ol:not([class]) ol:not(:first-child), .wysiwyg > ol:not([class]) ul:not(:first-child),
-  .wysiwyg > ul:not([class]) ol:not(:first-child),
-  .wysiwyg > ul:not([class]) ul:not(:first-child) {
+  .wysiwyg > ol:not([class]) ol, .wysiwyg > ol:not([class]) ul,
+  .wysiwyg > ul:not([class]) ol,
+  .wysiwyg > ul:not([class]) ul {
     margin-top: 0.5rem;
-  }
-  .wysiwyg > ol:not([class]) ol:not(:last-child), .wysiwyg > ol:not([class]) ul:not(:last-child),
-  .wysiwyg > ul:not([class]) ol:not(:last-child),
-  .wysiwyg > ul:not([class]) ul:not(:last-child) {
     margin-bottom: 0rem;
   }
 }
 
 @media all and (min-width: 768px) {
-  .wysiwyg > ol:not([class]) ol:not(:first-child), .wysiwyg > ol:not([class]) ul:not(:first-child),
-  .wysiwyg > ul:not([class]) ol:not(:first-child),
-  .wysiwyg > ul:not([class]) ul:not(:first-child) {
+  .wysiwyg > ol:not([class]) ol, .wysiwyg > ol:not([class]) ul,
+  .wysiwyg > ul:not([class]) ol,
+  .wysiwyg > ul:not([class]) ul {
     margin-top: 1rem;
-  }
-  .wysiwyg > ol:not([class]) ol:not(:last-child), .wysiwyg > ol:not([class]) ul:not(:last-child),
-  .wysiwyg > ul:not([class]) ol:not(:last-child),
-  .wysiwyg > ul:not([class]) ul:not(:last-child) {
     margin-bottom: 0rem;
   }
 }
 
 @media all and (min-width: 1025px) {
-  .wysiwyg > ol:not([class]) ol:not(:first-child), .wysiwyg > ol:not([class]) ul:not(:first-child),
-  .wysiwyg > ul:not([class]) ol:not(:first-child),
-  .wysiwyg > ul:not([class]) ul:not(:first-child) {
+  .wysiwyg > ol:not([class]) ol, .wysiwyg > ol:not([class]) ul,
+  .wysiwyg > ul:not([class]) ol,
+  .wysiwyg > ul:not([class]) ul {
     margin-top: 1.5rem;
-  }
-  .wysiwyg > ol:not([class]) ol:not(:last-child), .wysiwyg > ol:not([class]) ul:not(:last-child),
-  .wysiwyg > ul:not([class]) ol:not(:last-child),
-  .wysiwyg > ul:not([class]) ul:not(:last-child) {
     margin-bottom: 0rem;
   }
 }
