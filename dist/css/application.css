@@ -586,6 +586,10 @@ hr {
   border: none;
 }
 
+iframe {
+  border: none;
+}
+
 img {
   max-width: 100%;
 }
