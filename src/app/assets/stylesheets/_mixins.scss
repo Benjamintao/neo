@@ -21,6 +21,17 @@
     }
 }
 
+@mixin mq-custom($mq-range, $mq-breakpoint) {
+    $mq-device: '';
+    @if $enable-mq-device == true {
+        $mq-device: '-device';
+    }
+
+    @media all and (#{$mq-range}#{$mq-device}-width: $mq-breakpoint) {
+        @content;
+    }
+}
+
 // Indents
 @mixin indents-x($multiplier-right: 1, $multiplier-left: $multiplier-right, $exclude-first-last: true) {
     $indent-right: 0;
@@ -210,7 +221,7 @@
 }
 
 // Grid
-@mixin grid($main-axis: x, $justify-content: flex-start, $align-items: flex-start) {
+@mixin grid($main-axis: x, $justify-content: flex-start, $align-items: flex-start, $multiplier: 1) {
     display: flex;
     justify-content: $justify-content;
     align-items: $align-items;
@@ -226,7 +237,7 @@
     @if $enable-mq == true {
         @each $mq-grid-gutter in $mq-grid-gutters {
             $mq: nth($mq-grid-gutter, 1);
-            $gutter: -#{nth($mq-grid-gutter, 2) / 2};
+            $gutter: -#{nth($mq-grid-gutter, 2) / 2 * $multiplier};
 
             @include mq($mq) {
                 margin: {
@@ -246,11 +257,11 @@
 }
 
 // Grid col
-@mixin grid-col {
+@mixin grid-col($multiplier: 1) {
     @if $enable-mq == true {
         @each $mq-grid-gutter in $mq-grid-gutters {
             $mq: nth($mq-grid-gutter, 1);
-            $gutter: nth($mq-grid-gutter, 2) / 2;
+            $gutter: nth($mq-grid-gutter, 2) / 2 * $multiplier;
 
             @include mq($mq) {
                 padding: {
@@ -263,8 +274,8 @@
         $gutter: $grid-gutter / 2;
 
         padding: {
-            right: $gutter;
-            left:  $gutter;
+            right: $gutter * $multiplier;
+            left:  $gutter * $multiplier;
         };
     }
 }
