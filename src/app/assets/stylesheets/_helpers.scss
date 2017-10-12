@@ -9,3 +9,7 @@
 .nowrap {
     white-space: nowrap;
 }
+
+.text-lead {
+    @include text-lg;
+}

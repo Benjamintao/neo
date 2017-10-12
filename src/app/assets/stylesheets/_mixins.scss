@@ -336,15 +336,15 @@
 }
 
 // Text
-@mixin text-large {
+@mixin text-lg {
     @include font(2rem, 2.5rem);
 }
 
-@mixin text-base {
+@mixin text-md {
     @include font(1.5rem, 2rem);
 }
 
-@mixin text-small {
+@mixin text-sm {
     @include font(1rem, 1.5rem);
 }
 
@@ -383,13 +383,13 @@
 
 @mixin h5($font-weight: $font-weight-title) {
     @include heading;
-    @include text-large;
+    @include text-lg;
     font-weight: $font-weight;
 }
 
 @mixin h6($font-weight: $font-weight-title) {
     @include heading;
-    @include text-base;
+    @include text-md;
     font-weight: $font-weight;
 }
 

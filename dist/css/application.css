@@ -636,6 +636,11 @@ table {
   white-space: nowrap;
 }
 
+.text-lead {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
 .ui-autocomplete {
   position: absolute;
   z-index: 1001;
@@ -1250,11 +1255,6 @@ a.button {
 .rub-serif {
   font-family: ALSRubl-Times, "Times New Roman", Times, serif;
   line-height: normal;
-}
-
-.text-lead {
-  font-size: 2rem;
-  line-height: 1.25;
 }
 
 @media all and (max-width: 767px) {
