@@ -142,6 +142,11 @@ small {
     @include text-sm;
 }
 
+// SVG
+svg {
+    vertical-align: top;
+}
+
 // Tables
 table {
     border-collapse: collapse;
